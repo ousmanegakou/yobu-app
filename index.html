@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YOBU &mdash; Same-Day Delivery</title>
+<title>YOBU</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#0066FF;--green:#00C48C;--bg:#F7F9FC;--dark:#0A0F1E;--gray:#6B7280;--light:#E8EDF5;--red:#FF4444;--white:#fff}
+:root{--blue:#0066FF;--green:#00C48C;--bg:#F7F9FC;--dark:#0A0F1E;--gray:#6B7280;--light:#E8EDF5;--red:#FF4444}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh}
 h1,h2,h3,h4{font-family:'Syne',sans-serif}
@@ -21,8 +21,7 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 .role-tabs{display:flex;gap:8px;margin-bottom:32px}
 .role-tab{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(255,255,255,.5);cursor:pointer;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;transition:all .2s}
 .role-tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;color:rgba(255,255,255,.5);font-size:12px;margin-bottom:6px;letter-spacing:.5px}
+.form-group{margin-bottom:16px}.form-group label{display:block;color:rgba(255,255,255,.5);font-size:12px;margin-bottom:6px;letter-spacing:.5px}
 .form-group input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#fff;font-size:15px;font-family:'DM Sans',sans-serif;transition:border-color .2s;outline:none}
 .form-group input:focus{border-color:var(--blue)}
 .btn-primary{width:100%;padding:16px;background:var(--blue);color:#fff;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:8px}
@@ -33,7 +32,7 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 .topbar-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800}.topbar-logo span{color:var(--blue)}
 .topbar-right{display:flex;align-items:center;gap:16px}
 .badge-role{background:var(--blue);color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-family:'Syne',sans-serif;font-weight:700}
-.btn-logout{background:none;border:1px solid var(--light);color:var(--gray);padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;transition:all .2s}
+.btn-logout{background:none;border:1px solid var(--light);color:var(--gray);padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px}
 .btn-logout:hover{border-color:var(--red);color:var(--red)}
 .content{flex:1;padding:32px 24px;max-width:1100px;margin:0 auto;width:100%}
 .nav-tabs{display:flex;gap:4px;margin-bottom:32px;background:#fff;padding:6px;border-radius:14px;border:1px solid var(--light);width:fit-content}
@@ -61,12 +60,11 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#f8faff}
 .form-card h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .form-group-light label{display:block;color:var(--gray);font-size:12px;margin-bottom:6px}
-.form-group-light input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--light);font-size:14px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;background:var(--bg)}
+.form-group-light input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--light);font-size:14px;outline:none;background:var(--bg)}
 .form-group-light input:focus{border-color:var(--blue);background:#fff}
 .btn-action{padding:12px 24px;border-radius:10px;border:none;cursor:pointer;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;transition:all .2s}
 .btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:#0052cc}
-.btn-green{background:var(--green);color:#fff}
-.btn-red{background:var(--red);color:#fff;font-size:12px;padding:6px 14px}
+.btn-green{background:var(--green);color:#fff}.btn-red{background:var(--red);color:#fff;font-size:12px;padding:6px 14px}
 .btn-ghost{background:var(--light);color:var(--dark)}.btn-ghost:hover{background:#dde3ed}
 .map-placeholder{background:linear-gradient(135deg,#e8f4ff,#f0fff8);border-radius:16px;height:200px;display:flex;align-items:center;justify-content:center;border:1px solid var(--light);margin-bottom:24px}
 .map-inner{text-align:center}.map-icon{font-size:48px;margin-bottom:12px}.map-inner p{color:var(--gray);font-size:14px}
@@ -93,7 +91,7 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#f8faff}
 .driver-info{flex:1}.driver-name{font-family:'Syne',sans-serif;font-weight:700;font-size:15px}
 .driver-detail{font-size:12px;color:var(--gray);margin-top:2px}
 .stop-block{background:var(--bg);border-radius:12px;padding:16px;margin-bottom:12px;border:1px solid var(--light)}
-@media(max-width:600px){.login-box{width:90%;padding:32px 24px}.form-row{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.content{padding:16px}}
+@media(max-width:600px){.login-box{width:90%;padding:32px 24px}.form-row{grid-template-columns:1fr}.content{padding:16px}}
 </style>
 </head>
 <body>
@@ -103,20 +101,20 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#f8faff}
     <div class="logo">Y<span>O</span>BU</div>
     <div class="tagline">Same-Day Delivery for Local Businesses</div>
     <div class="role-tabs">
-      <button class="role-tab active" onclick="setRole('merchant',this)">&#x1F3EA; Merchant</button>
-      <button class="role-tab" onclick="setRole('driver',this)">&#x1F697; Driver</button>
-      <button class="role-tab" onclick="setRole('admin',this)">&#x2699;&#xFE0F; Admin</button>
+      <button class="role-tab active" onclick="setRole('merchant',this)">🏪 Merchant</button>
+      <button class="role-tab" onclick="setRole('driver',this)">🚗 Driver</button>
+      <button class="role-tab" onclick="setRole('admin',this)">⚙️ Admin</button>
     </div>
     <div class="form-group"><label>EMAIL</label><input type="email" id="login-email" value="merchant@yobu.com"></div>
     <div class="form-group"><label>PASSWORD</label><input type="password" id="login-password" value="password123"></div>
-    <button class="btn-primary" id="login-btn">Se connecter &#x2192;</button>
+    <button class="btn-primary" id="login-btn">Se connecter →</button>
     <div class="error-msg" id="login-error"></div>
-    <div class="demo-hint">merchant / driver / admin @yobu.com &middot; password123</div>
+    <div class="demo-hint">merchant / driver / admin @yobu.com · password123</div>
   </div>
 </div>
 
 <div id="screen-merchant" class="screen">
-  <div class="topbar"><div class="topbar-logo">Y<span>O</span>BU</div><div class="topbar-right"><span class="badge-role">&#x1F3EA; Merchant</span><button class="btn-logout" onclick="logout()">Deconnexion</button></div></div>
+  <div class="topbar"><div class="topbar-logo">Y<span>O</span>BU</div><div class="topbar-right"><span class="badge-role">🏪 Merchant</span><button class="btn-logout" onclick="logout()">Deconnexion</button></div></div>
   <div class="content">
     <div class="nav-tabs">
       <button class="nav-tab active" onclick="showTab('merchant','dashboard',this)">Dashboard</button>
@@ -124,25 +122,25 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#f8faff}
       <button class="nav-tab" onclick="showTab('merchant','my-deliveries',this)">Mes livraisons</button>
     </div>
     <div id="merchant-dashboard">
-      <div class="section-title">Bonjour &#x1F44B;</div>
-      <div class="section-sub">Etat de vos livraisons aujourd'hui</div>
+      <div class="section-title">Bonjour 👋</div>
+      <div class="section-sub">Etat de vos livraisons</div>
       <div class="stats-grid">
-        <div class="stat-card"><div class="stat-label">TOTAL</div><div class="stat-value" id="stat-total">&#x2014;</div><div class="stat-sub">livraisons</div></div>
-        <div class="stat-card"><div class="stat-label">EN COURS</div><div class="stat-value" id="stat-active">&#x2014;</div><div class="stat-sub">actives</div></div>
-        <div class="stat-card"><div class="stat-label">LIVREES</div><div class="stat-value" id="stat-delivered">&#x2014;</div><div class="stat-sub">completees</div></div>
-        <div class="stat-card"><div class="stat-label">REVENU</div><div class="stat-value" id="stat-revenue">&#x2014;</div><div class="stat-sub">estime</div></div>
+        <div class="stat-card"><div class="stat-label">TOTAL</div><div class="stat-value" id="stat-total">—</div><div class="stat-sub">livraisons</div></div>
+        <div class="stat-card"><div class="stat-label">EN COURS</div><div class="stat-value" id="stat-active">—</div><div class="stat-sub">actives</div></div>
+        <div class="stat-card"><div class="stat-label">LIVREES</div><div class="stat-value" id="stat-delivered">—</div><div class="stat-sub">completees</div></div>
+        <div class="stat-card"><div class="stat-label">REVENU</div><div class="stat-value" id="stat-revenue">—</div><div class="stat-sub">estime</div></div>
       </div>
       <div class="table-card"><div class="table-header"><div class="table-title">Livraisons recentes</div></div><div id="merchant-recent"></div></div>
     </div>
     <div id="merchant-new-delivery" style="display:none">
       <div class="section-title">Nouvelle livraison</div>
-      <div class="section-sub">Multi-stops &middot; max 8 destinations</div>
-      <div class="form-card"><h3>&#x1F4E6; Pickup</h3>
-        <div class="form-row"><div class="form-group-light"><label>ADRESSE</label><input id="p-addr" value="45 Rue du Faubourg Saint-Antoine, Paris"></div><div class="form-group-light"><label>CONTACT</label><input id="p-contact" value="Boutique YOBU"></div></div>
+      <div class="section-sub">Multi-stops · max 8 destinations</div>
+      <div class="form-card"><h3>📦 Pickup</h3>
+        <div class="form-row"><div class="form-group-light"><label>ADRESSE</label><input id="p-addr" value="45 Rue du Faubourg, Paris"></div><div class="form-group-light"><label>CONTACT</label><input id="p-contact" value="Boutique YOBU"></div></div>
         <div class="form-row"><div class="form-group-light"><label>TELEPHONE</label><input id="p-phone" value="+33612345678"></div><div class="form-group-light"><label>NOTES</label><input id="p-notes" placeholder="Instructions..."></div></div>
       </div>
-      <div class="form-card"><h3>&#x1F4CD; Stops</h3><div id="stops-list"></div><button class="btn-action btn-ghost" onclick="addStop()" style="margin-top:12px">+ Ajouter un stop</button></div>
-      <div style="display:flex;gap:12px"><button class="btn-action btn-blue" onclick="createDelivery()">&#x1F680; Creer la livraison</button><button class="btn-action btn-ghost" onclick="showTab('merchant','dashboard')">Annuler</button></div>
+      <div class="form-card"><h3>📍 Stops</h3><div id="stops-list"></div><button class="btn-action btn-ghost" onclick="addStop()" style="margin-top:12px">+ Ajouter un stop</button></div>
+      <div style="display:flex;gap:12px"><button class="btn-action btn-blue" onclick="createDelivery()">🚀 Creer la livraison</button><button class="btn-action btn-ghost" onclick="showTab('merchant','dashboard')">Annuler</button></div>
     </div>
     <div id="merchant-my-deliveries" style="display:none">
       <div class="section-title">Mes livraisons</div>
@@ -152,7 +150,7 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#f8faff}
 </div>
 
 <div id="screen-driver" class="screen">
-  <div class="topbar"><div class="topbar-logo">Y<span>O</span>BU</div><div class="topbar-right"><span class="badge-role" style="background:var(--green)">&#x1F697; Driver</span><button class="btn-logout" onclick="logout()">Deconnexion</button></div></div>
+  <div class="topbar"><div class="topbar-logo">Y<span>O</span>BU</div><div class="topbar-right"><span class="badge-role" style="background:var(--green)">🚗 Driver</span><button class="btn-logout" onclick="logout()">Deconnexion</button></div></div>
   <div class="content">
     <div class="nav-tabs">
       <button class="nav-tab active" onclick="showTab('driver','available',this)">Disponibles</button>
@@ -161,7 +159,7 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#f8faff}
     </div>
     <div id="driver-available">
       <div class="section-title">Livraisons disponibles</div>
-      <div class="map-placeholder"><div class="map-inner"><div class="map-icon">&#x1F5FA;</div><p>Carte temps reel &middot; WebSocket actif</p></div></div>
+      <div class="map-placeholder"><div class="map-inner"><div class="map-icon">🗺️</div><p>Carte temps reel</p></div></div>
       <div id="driver-available-list"></div>
     </div>
     <div id="driver-active" style="display:none"><div class="section-title">En cours</div><div id="driver-active-content"></div></div>
@@ -170,7 +168,7 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#f8faff}
 </div>
 
 <div id="screen-admin" class="screen">
-  <div class="topbar"><div class="topbar-logo">Y<span>O</span>BU</div><div class="topbar-right"><span class="badge-role" style="background:#6366f1">&#x2699; Admin</span><button class="btn-logout" onclick="logout()">Deconnexion</button></div></div>
+  <div class="topbar"><div class="topbar-logo">Y<span>O</span>BU</div><div class="topbar-right"><span class="badge-role" style="background:#6366f1">⚙️ Admin</span><button class="btn-logout" onclick="logout()">Deconnexion</button></div></div>
   <div class="content">
     <div class="nav-tabs">
       <button class="nav-tab active" onclick="showTab('admin','overview',this)">Vue globale</button>
@@ -181,10 +179,10 @@ tr:last-child td{border-bottom:none}tr:hover td{background:#f8faff}
     <div id="admin-overview">
       <div class="section-title">Admin Dashboard</div>
       <div class="stats-grid">
-        <div class="stat-card"><div class="stat-label">MARCHANDS</div><div class="stat-value" id="a-merchants">&#x2014;</div></div>
-        <div class="stat-card"><div class="stat-label">CHAUFFEURS</div><div class="stat-value" id="a-drivers">&#x2014;</div></div>
-        <div class="stat-card"><div class="stat-label">LIVRAISONS</div><div class="stat-value" id="a-deliveries">&#x2014;</div></div>
-        <div class="stat-card"><div class="stat-label">REVENUS</div><div class="stat-value" id="a-revenue">&#x2014;</div></div>
+        <div class="stat-card"><div class="stat-label">MARCHANDS</div><div class="stat-value" id="a-merchants">—</div></div>
+        <div class="stat-card"><div class="stat-label">CHAUFFEURS</div><div class="stat-value" id="a-drivers">—</div></div>
+        <div class="stat-card"><div class="stat-label">LIVRAISONS</div><div class="stat-value" id="a-deliveries">—</div></div>
+        <div class="stat-card"><div class="stat-label">REVENUS</div><div class="stat-value" id="a-revenue">—</div></div>
       </div>
     </div>
     <div id="admin-drivers" style="display:none"><div class="section-title">Chauffeurs</div><div id="admin-drivers-list"></div></div>
@@ -200,8 +198,6 @@ var API = 'https://yobu-backend-production.up.railway.app/api';
 var token = localStorage.getItem('yobu_token');
 var role = localStorage.getItem('yobu_role');
 var stopCount = 0;
-
-document.getElementById('login-btn').addEventListener('click', doLogin);
 
 function setRole(r, btn) {
   document.querySelectorAll('.role-tab').forEach(function(t) { t.classList.remove('active'); });
@@ -286,7 +282,7 @@ function req(path, opts) {
 }
 
 function loading() { return '<div class="loading"><div class="spinner"></div><p>Chargement...</p></div>'; }
-function empty(msg) { return '<div class="empty"><div class="empty-icon">&#x1F4E6;</div><p>' + msg + '</p></div>'; }
+function empty(msg) { return '<div class="empty"><div class="empty-icon">--</div><p>' + msg + '</p></div>'; }
 
 function statusLabel(s) {
   var map = { pending: 'En attente', assigned: 'Assigne', picked_up: 'Pickup', in_transit: 'En route', delivered: 'Livre', cancelled: 'Annule' };
@@ -341,7 +337,7 @@ function addStop() {
   div.className = 'stop-block';
   div.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">' +
     '<strong style="font-family:Syne,sans-serif">Stop #' + id + '</strong>' +
-    '<button class="btn-action btn-red" onclick="removeStop(' + id + ')">&#x2715;</button></div>' +
+    '<button class="btn-action btn-red" onclick="removeStop(' + id + ')">X</button></div>' +
     '<div class="form-row"><div class="form-group-light"><label>ADRESSE</label><input id="sa-' + id + '" placeholder="Adresse livraison"></div>' +
     '<div class="form-group-light"><label>CLIENT</label><input id="sc-' + id + '" placeholder="Nom client"></div></div>' +
     '<div class="form-row"><div class="form-group-light"><label>TELEPHONE</label><input id="sp-' + id + '" placeholder="+33..."></div></div>';
@@ -367,7 +363,7 @@ function loadDAvail() {
   req('/deliveries?status=pending').then(function(d) {
     var list = d.deliveries || d || [];
     document.getElementById('driver-available-list').innerHTML = list.length ? list.map(function(x) {
-      return '<div class="driver-card"><div class="driver-avatar">&#x1F4E6;</div><div class="driver-info"><div class="driver-name">' + (x.tracking_id||x.id) + '</div><div class="driver-detail">' + (x.stops_count||'?') + ' stops &middot; $' + (x.total_price||'?') + '</div></div><button class="btn-action btn-green" onclick="acceptD('' + x.id + '')">Accepter</button></div>';
+      return '<div class="driver-card"><div class="driver-avatar">P</div><div class="driver-info"><div class="driver-name">' + (x.tracking_id||x.id) + '</div><div class="driver-detail">' + (x.stops_count||'?') + ' stops - $' + (x.total_price||'?') + '</div></div><button class="btn-action btn-green" onclick="acceptD('' + x.id + '')">Accepter</button></div>';
     }).join('') : empty('Aucune livraison disponible');
   }).catch(function() { document.getElementById('driver-available-list').innerHTML = empty('Erreur'); });
 }
@@ -390,16 +386,17 @@ function loadDActive() {
     document.getElementById('driver-active-content').innerHTML =
       '<div class="tracking-card"><h3 style="font-family:Syne,sans-serif;margin-bottom:8px">' + (x.tracking_id||x.id) + '</h3>' +
       '<span class="status status-' + x.status + '" style="margin-bottom:16px;display:inline-block">' + statusLabel(x.status) + '</span>' +
-      '<div class="track-steps"><div class="track-step"><div class="track-step-circle done">&#x2713;</div><p>Assigne</p></div>' +
+      '<div class="track-steps">' +
+      '<div class="track-step"><div class="track-step-circle done">OK</div><p>Assigne</p></div>' +
       '<div class="track-line done"></div>' +
-      '<div class="track-step"><div class="track-step-circle ' + s2 + '">&#x1F4E6;</div><p>Pickup</p></div>' +
+      '<div class="track-step"><div class="track-step-circle ' + s2 + '">P</div><p>Pickup</p></div>' +
       '<div class="track-line ' + l2 + '"></div>' +
-      '<div class="track-step"><div class="track-step-circle ' + s3 + '">&#x1F697;</div><p>En route</p></div>' +
+      '<div class="track-step"><div class="track-step-circle ' + s3 + '">R</div><p>En route</p></div>' +
       '<div class="track-line"></div>' +
-      '<div class="track-step"><div class="track-step-circle">&#x2705;</div><p>Livre</p></div></div>' +
+      '<div class="track-step"><div class="track-step-circle">D</div><p>Livre</p></div></div>' +
       '<div style="display:flex;gap:12px;flex-wrap:wrap">' +
-      '<button class="btn-action btn-blue" onclick="updD('' + x.id + '','picked_up')">&#x2705; Pickup confirme</button>' +
-      '<button class="btn-action btn-green" onclick="updD('' + x.id + '','delivered')">&#x1F389; Terminee</button></div></div>';
+      '<button class="btn-action btn-blue" onclick="updD('' + x.id + '','picked_up')">Pickup OK</button>' +
+      '<button class="btn-action btn-green" onclick="updD('' + x.id + '','delivered')">Terminee</button></div></div>';
   }).catch(function() { document.getElementById('driver-active-content').innerHTML = empty('Erreur'); });
 }
 
@@ -435,8 +432,8 @@ function loadADrivers() {
     var list = d.drivers || d || [];
     document.getElementById('admin-drivers-list').innerHTML = list.length ? list.map(function(x) {
       return '<div class="driver-card"><div class="driver-avatar">' + (x.name||x.email||'D')[0].toUpperCase() + '</div>' +
-        '<div class="driver-info"><div class="driver-name">' + (x.name||x.email) + '</div><div class="driver-detail">' + x.email + ' &middot; ' + (x.phone||'-') + '</div></div>' +
-        '<span class="status status-' + (x.is_available?'online':'offline') + '">' + (x.is_available?'&#x1F7E2; Dispo':'&#x26AB; Offline') + '</span></div>';
+        '<div class="driver-info"><div class="driver-name">' + (x.name||x.email) + '</div><div class="driver-detail">' + x.email + ' - ' + (x.phone||'-') + '</div></div>' +
+        '<span class="status status-' + (x.is_available?'online':'offline') + '">' + (x.is_available?'Disponible':'Offline') + '</span></div>';
     }).join('') : empty('Aucun chauffeur');
   }).catch(function() { document.getElementById('admin-drivers-list').innerHTML = empty('Erreur'); });
 }
@@ -466,6 +463,7 @@ function toast(msg, type) {
   setTimeout(function() { t.className = 'toast'; }, 3500);
 }
 
+document.getElementById('login-btn').addEventListener('click', doLogin);
 if (token && role) { goTo(); } else { addStop(); }
 </script>
 </body>
