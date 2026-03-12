@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,6 @@
   --yellow:#EAB308;
 }
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#F8FAFC;color:#0F172A;min-height:100vh}
-
-/* ── LOGIN ── */
 #loginScreen{display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#0F172A 0%,#1E3A5F 100%)}
 .login-box{background:#1E293B;border-radius:20px;padding:48px 40px;width:420px;box-shadow:0 24px 64px rgba(0,0,0,.5)}
 .login-logo{text-align:center;margin-bottom:32px}
@@ -39,8 +37,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F8FAFC;color:#0F172
 .role-merchant{background:#FFF7ED;color:#F97316}
 .role-driver{background:#F0FDF4;color:#22C55E}
 .error-msg{color:#EF4444;font-size:.85rem;text-align:center;margin-top:12px;min-height:20px}
-
-/* ── SHARED LAYOUT ── */
 #app{display:none}
 .topbar{height:64px;background:#fff;border-bottom:1px solid #E2E8F0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
 .topbar-brand{font-size:1.4rem;font-weight:800;color:#0F172A}
@@ -52,8 +48,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F8FAFC;color:#0F172
 .btn-logout:hover{background:#F1F5F9;color:#0F172A}
 .notification-bell{position:relative;cursor:pointer;color:#64748B;font-size:1.2rem}
 .notif-dot{position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:#EF4444;border-radius:50%;border:2px solid #fff}
-
-/* ── STAT CARDS ── */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:28px}
 .stat-card{background:#fff;border-radius:14px;padding:22px 24px;border:1px solid #E2E8F0;transition:.2s;position:relative;overflow:hidden}
 .stat-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
@@ -71,9 +65,6 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#F8FAFC;color:#0F172
 .stat-label{font-size:.83rem;color:#64748B;margin-top:6px;font-weight:500}
 .stat-change{font-size:.78rem;margin-top:8px;font-weight:600}
 .stat-change.up{color:var(--green)}
-.stat-change.down{color:var(--red)}
-
-/* ── TABLES ── */
 .table-card{background:#fff;border-radius:14px;border:1px solid #E2E8F0;overflow:hidden;margin-bottom:24px}
 .table-header{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #F1F5F9}
 .table-header h3{font-size:1rem;font-weight:700;color:#0F172A}
@@ -89,8 +80,6 @@ tr:hover td{background:#FAFBFC}
 .badge-blue{background:#EFF6FF;color:#2563EB}
 .badge-gray{background:#F1F5F9;color:#64748B}
 .badge-purple{background:#EEF0FF;color:#7C3AED}
-
-/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:9px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;transition:.2s}
 .btn-sm{padding:6px 12px;font-size:.78rem}
 .btn-brand{background:var(--brand);color:#fff}
@@ -102,27 +91,23 @@ tr:hover td{background:#FAFBFC}
 .btn-danger{background:var(--red);color:#fff}
 .btn-danger:hover{background:#DC2626}
 .btn-orange{background:var(--orange);color:#fff}
-
-/* ── MODAL ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
 .modal-overlay.open{display:flex}
-.modal{background:#fff;border-radius:18px;padding:36px 32px;width:500px;max-width:95vw;box-shadow:0 24px 64px rgba(0,0,0,.2);animation:slideUp .25s ease}
+.modal{background:#fff;border-radius:18px;padding:36px 32px;width:520px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,.2);animation:slideUp .25s ease}
+.modal-lg{width:680px}
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal h2{font-size:1.25rem;font-weight:800;margin-bottom:6px;color:#0F172A}
-.modal p{color:#64748B;font-size:.88rem;margin-bottom:24px}
+.modal p.modal-sub{color:#64748B;font-size:.88rem;margin-bottom:24px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-group{margin-bottom:18px}
 .form-group label{display:block;font-size:.82rem;font-weight:600;color:#475569;margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
-.form-group input,.form-group select{width:100%;padding:11px 14px;border:1.5px solid #E2E8F0;border-radius:9px;font-size:.9rem;color:#0F172A;transition:.2s;background:#fff}
-.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(108,99,255,.1)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid #E2E8F0;border-radius:9px;font-size:.9rem;color:#0F172A;transition:.2s;background:#fff}
+.form-group textarea{resize:vertical;min-height:70px}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(108,99,255,.1)}
 .modal-footer{display:flex;gap:12px;justify-content:flex-end;margin-top:8px}
-
-/* ── ADMIN LAYOUT ── */
 #adminDash{display:none;padding:28px;max-width:1400px;margin:0 auto}
 .admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .admin-grid-3{display:grid;grid-template-columns:2fr 1fr;gap:24px}
-
-/* ── MERCHANT SIDEBAR LAYOUT ── */
 #merchantDash{display:none;flex-direction:row;min-height:calc(100vh - 64px)}
 .sidebar{width:240px;background:var(--dark);flex-shrink:0;display:flex;flex-direction:column;padding:20px 0}
 .sidebar-logo{padding:8px 20px 20px;border-bottom:1px solid var(--border);margin-bottom:16px}
@@ -137,15 +122,9 @@ tr:hover td{background:#FAFBFC}
 .content-area{padding:28px}
 .page-title{font-size:1.5rem;font-weight:800;color:#0F172A;margin-bottom:6px}
 .page-subtitle{color:#64748B;font-size:.88rem;margin-bottom:28px}
-
-/* ── MAP ── */
 .map-container{height:340px;border-radius:12px;overflow:hidden;border:1px solid #E2E8F0;background:#e8edf2;position:relative}
-.map-placeholder{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1e3a5f,#0f172a);color:#94A3B8;font-size:.9rem}
-.map-placeholder .map-icon{font-size:3rem;margin-bottom:12px;opacity:.5}
-
-/* ── DRIVER APP ── */
 #driverDash{display:none;background:#F0F2F5;min-height:calc(100vh - 64px);padding:24px}
-.driver-phone{max-width:420px;margin:0 auto}
+.driver-phone{max-width:460px;margin:0 auto}
 .earnings-card{background:linear-gradient(135deg,var(--brand),#8B5CF6);border-radius:20px;padding:28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
 .earnings-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:rgba(255,255,255,.08);border-radius:50%}
 .earnings-card::after{content:'';position:absolute;bottom:-60px;left:-20px;width:200px;height:200px;background:rgba(255,255,255,.05);border-radius:50%}
@@ -162,18 +141,13 @@ tr:hover td{background:#FAFBFC}
 .route-card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}
 .route-card-title{font-size:.95rem;font-weight:700;color:#0F172A}
 .route-card-sub{font-size:.8rem;color:#64748B;margin-top:2px}
-.route-meta{display:flex;gap:12px;margin-bottom:14px}
+.route-meta{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .route-meta-item{display:flex;align-items:center;gap:5px;font-size:.8rem;color:#64748B}
 .route-meta-item .dot{width:6px;height:6px;border-radius:50%;background:var(--brand)}
-.btn-accept{width:100%;padding:11px;background:var(--brand);color:#fff;border:none;border-radius:10px;font-size:.88rem;font-weight:700;cursor:pointer;transition:.2s}
-.btn-accept:hover{background:var(--brand-dark)}
-.btn-accepted{background:#F0FDF4;color:var(--green);border:2px solid var(--green);cursor:default}
 .section-title{font-size:1.05rem;font-weight:800;color:#0F172A;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-
-/* ── CUSTOMER TRACKING ── */
 #customerTrack{display:none;background:#F8FAFC;min-height:calc(100vh - 64px);padding:28px}
 .tracking-layout{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
-.tracking-card{background:#fff;border-radius:16px;padding:24px;border:1px solid #E2E8F0}
+.tracking-card{background:#fff;border-radius:16px;padding:24px;border:1px solid #E2E8F0;margin-bottom:20px}
 .eta-display{text-align:center;padding:20px 0}
 .eta-mins{font-size:3.5rem;font-weight:900;color:var(--brand);line-height:1}
 .eta-unit{font-size:1rem;color:#64748B;font-weight:500}
@@ -188,24 +162,80 @@ tr:hover td{background:#FAFBFC}
 .timeline-info h4{font-size:.88rem;font-weight:700;color:#0F172A}
 .timeline-info p{font-size:.78rem;color:#94A3B8;margin-top:2px}
 .driver-info-card{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#F8FAFC;border-radius:10px;margin-top:16px}
-.driver-avatar{width:46px;height:46px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem}
+.driver-avatar-sm{width:46px;height:46px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem}
 .driver-name{font-size:.92rem;font-weight:700;color:#0F172A}
 .driver-vehicle{font-size:.78rem;color:#64748B;margin-top:2px}
 .star-rating{color:#EAB308;font-size:.9rem;letter-spacing:1px}
-
-/* ── ACTIVITY FEED ── */
 .activity-feed{display:flex;flex-direction:column;gap:0}
 .activity-item{display:flex;align-items:flex-start;gap:12px;padding:14px 20px;border-bottom:1px solid #F8FAFC;transition:.2s}
 .activity-item:hover{background:#FAFBFC}
 .activity-dot{width:10px;height:10px;border-radius:50%;margin-top:4px;flex-shrink:0}
 .activity-text{font-size:.85rem;color:#334155;flex:1}
 .activity-time{font-size:.75rem;color:#94A3B8;white-space:nowrap}
-
-/* ── FORM PANEL ── */
 .form-panel{background:#fff;border-radius:14px;border:1px solid #E2E8F0;padding:24px;margin-bottom:24px}
-.form-panel h3{font-size:1rem;font-weight:700;color:#0F172A;margin-bottom:20px;display:flex;align-items:center;gap:8px}
-
-/* ── RESPONSIVE ── */
+.form-panel>h3{font-size:1rem;font-weight:700;color:#0F172A;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.form-section{border-top:1px solid #F1F5F9;padding-top:20px;margin-top:4px;margin-bottom:4px}
+.form-section-title{font-size:.82rem;font-weight:700;color:#6C63FF;text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.stop-card{background:#F8FAFC;border:1.5px solid #E2E8F0;border-radius:12px;padding:16px;margin-bottom:12px;position:relative}
+.stop-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.stop-number{font-size:.82rem;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:.4px}
+.stop-remove{background:none;border:1px solid #FCA5A5;border-radius:6px;padding:4px 10px;font-size:.75rem;color:#EF4444;cursor:pointer;transition:.2s}
+.stop-remove:hover{background:#FEF2F2}
+.add-stop-btn{width:100%;padding:10px;border:2px dashed #C7D2FE;border-radius:10px;background:transparent;color:var(--brand);font-size:.88rem;font-weight:600;cursor:pointer;transition:.2s;margin-top:4px}
+.add-stop-btn:hover{background:#EEF0FF;border-color:var(--brand)}
+.toggle-row{display:flex;gap:24px;margin-bottom:18px}
+.toggle-item{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.88rem;color:#475569;font-weight:500}
+.toggle-item input[type=checkbox]{width:16px;height:16px;accent-color:var(--brand);cursor:pointer}
+.price-display{background:linear-gradient(135deg,#EEF0FF,#F5F3FF);border:1.5px solid #C7D2FE;border-radius:10px;padding:14px 16px;text-align:center}
+.price-display .price-val{font-size:1.6rem;font-weight:800;color:var(--brand)}
+.price-display .price-label{font-size:.78rem;color:#6C63FF;margin-top:2px}
+.price-breakdown{font-size:.75rem;color:#7C3AED;margin-top:6px}
+/* Driver workflow */
+.workflow-section{background:#F8FAFC;border-radius:10px;padding:14px;margin-top:12px}
+.workflow-title{font-size:.78rem;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.wf-btn{width:100%;padding:11px;border:none;border-radius:10px;font-size:.88rem;font-weight:700;cursor:pointer;transition:.2s;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.wf-btn:last-child{margin-bottom:0}
+.wf-btn-primary{background:var(--brand);color:#fff}
+.wf-btn-primary:hover{background:var(--brand-dark)}
+.wf-btn-green{background:var(--green);color:#fff}
+.wf-btn-green:hover{background:#16A34A}
+.wf-btn-red{background:#FEF2F2;color:#DC2626;border:1.5px solid #FCA5A5}
+.wf-btn-red:hover{background:#FEE2E2}
+.wf-btn-maps{background:#EFF6FF;color:#2563EB;border:1.5px solid #BFDBFE}
+.wf-btn-maps:hover{background:#DBEAFE}
+.wf-btn:disabled{opacity:.5;cursor:default}
+.driver-stops-list{margin:10px 0}
+.driver-stop-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:8px;margin-bottom:6px;font-size:.83rem}
+.driver-stop-item.stop-done{background:#F0FDF4;border:1px solid #BBF7D0}
+.driver-stop-item.stop-active{background:#EEF0FF;border:1.5px solid #A5B4FC}
+.driver-stop-item.stop-pending{background:#F8FAFC;border:1px solid #E2E8F0;color:#94A3B8}
+.stop-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:1px}
+.stop-dot-done{background:var(--green);color:#fff}
+.stop-dot-active{background:var(--brand);color:#fff}
+.stop-dot-pending{background:#E2E8F0;color:#94A3B8}
+.pickup-info{background:#FFF7ED;border:1px solid #FED7AA;border-radius:8px;padding:12px;margin-bottom:10px;font-size:.83rem}
+.pickup-label{font-size:.72rem;font-weight:700;color:#EA580C;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+.proof-placeholder{border:2px dashed #E2E8F0;border-radius:10px;padding:20px;text-align:center;cursor:pointer;transition:.2s;font-size:.83rem;color:#94A3B8;margin-bottom:8px}
+.proof-placeholder:hover{border-color:var(--brand);color:var(--brand);background:#F5F3FF}
+/* Customer tracking */
+.qr-placeholder{width:100px;height:100px;background:#F1F5F9;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 12px}
+.pod-card{background:#F0FDF4;border:1.5px solid #BBF7D0;border-radius:12px;padding:16px;margin-top:16px}
+.pod-title{font-size:.85rem;font-weight:700;color:#16A34A;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+/* Tabs */
+.tabs{display:flex;gap:0;border-bottom:2px solid #E2E8F0;margin-bottom:24px}
+.tab{padding:11px 20px;cursor:pointer;font-size:.88rem;font-weight:600;color:#64748B;border-bottom:2px solid transparent;margin-bottom:-2px;transition:.2s}
+.tab.active{color:var(--brand);border-bottom-color:var(--brand)}
+.tab:hover{color:#0F172A}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.progress-bar{background:#E2E8F0;border-radius:999px;height:6px;overflow:hidden}
+.progress-fill{height:100%;border-radius:999px;background:var(--brand);transition:width .3s}
+.skeleton{background:linear-gradient(90deg,#F1F5F9 25%,#E2E8F0 50%,#F1F5F9 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:6px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.toast{position:fixed;bottom:24px;right:24px;background:#0F172A;color:#fff;padding:14px 20px;border-radius:12px;font-size:.88rem;font-weight:600;z-index:9999;transform:translateY(100px);opacity:0;transition:.35s;display:flex;align-items:center;gap:10px;max-width:340px}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.success{border-left:4px solid var(--green)}
+.toast.error{border-left:4px solid var(--red)}
 @media(max-width:768px){
   .admin-grid,.admin-grid-3,.form-row,.tracking-layout{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr 1fr}
@@ -214,193 +244,157 @@ tr:hover td{background:#FAFBFC}
   .nav-item{flex-direction:column;gap:4px;font-size:.7rem;padding:8px 12px;border-left:none;border-bottom:3px solid transparent}
   .nav-item.active{border-bottom-color:var(--brand);border-left:none}
 }
-
-/* ── TABS ── */
-.tabs{display:flex;gap:0;border-bottom:2px solid #E2E8F0;margin-bottom:24px}
-.tab{padding:11px 20px;cursor:pointer;font-size:.88rem;font-weight:600;color:#64748B;border-bottom:2px solid transparent;margin-bottom:-2px;transition:.2s}
-.tab.active{color:var(--brand);border-bottom-color:var(--brand)}
-.tab:hover{color:#0F172A}
-.tab-pane{display:none}
-.tab-pane.active{display:block}
-
-/* ── PROGRESS BAR ── */
-.progress-bar{background:#E2E8F0;border-radius:999px;height:6px;overflow:hidden}
-.progress-fill{height:100%;border-radius:999px;background:var(--brand);transition:width .3s}
-
-/* ── LOADING ── */
-.skeleton{background:linear-gradient(90deg,#F1F5F9 25%,#E2E8F0 50%,#F1F5F9 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:6px}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.toast{position:fixed;bottom:24px;right:24px;background:#0F172A;color:#fff;padding:14px 20px;border-radius:12px;font-size:.88rem;font-weight:600;z-index:9999;transform:translateY(100px);opacity:0;transition:.35s;display:flex;align-items:center;gap:10px;max-width:340px}
-.toast.show{transform:translateY(0);opacity:1}
-.toast.success{border-left:4px solid var(--green)}
-.toast.error{border-left:4px solid var(--red)}
 </style>
 </head>
 <body>
-
-<!-- ══════════════════ LOGIN ══════════════════ -->
+<!-- LOGIN -->
 <div id="loginScreen">
   <div class="login-box">
     <div class="login-logo">
       <h1>YO<span>BU</span></h1>
-      <p>Delivery Platform — Connexion</p>
+      <p>US Same-Day Delivery Platform</p>
     </div>
     <div>
       <div class="form-group" style="margin-bottom:18px">
         <label>Email</label>
-        <input type="email" id="loginEmail" placeholder="votre@email.com" autocomplete="username">
+        <input type="email" id="loginEmail" placeholder="your@email.com" autocomplete="username">
       </div>
       <div class="form-group" style="margin-bottom:24px">
-        <label>Mot de passe</label>
+        <label>Password</label>
         <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password">
       </div>
-      <button class="btn-primary" id="loginBtn" onclick="doLogin()">Se connecter</button>
+      <button class="btn-primary" id="loginBtn" onclick="doLogin()">Sign In</button>
       <p class="error-msg" id="loginError"></p>
     </div>
     <div class="demo-hints" style="margin-top:24px">
-      <p style="color:#64748B;font-size:.78rem;text-align:center;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600">Comptes de démonstration</p>
+      <p style="color:#64748B;font-size:.78rem;text-align:center;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600">Demo Accounts</p>
       <div class="demo-hint" onclick="fillDemo('admin@yobu.com','password123')">
         <span class="role-badge role-admin">Admin</span>
         <div><strong>admin@yobu.com</strong><br><span>password123</span></div>
       </div>
       <div class="demo-hint" onclick="fillDemo('merchant@yobu.com','password123')">
-        <span class="role-badge role-merchant">Marchand</span>
+        <span class="role-badge role-merchant">Merchant</span>
         <div><strong>merchant@yobu.com</strong><br><span>password123</span></div>
       </div>
       <div class="demo-hint" onclick="fillDemo('driver@yobu.com','password123')">
-        <span class="role-badge role-driver">Livreur</span>
+        <span class="role-badge role-driver">Driver</span>
         <div><strong>driver@yobu.com</strong><br><span>password123</span></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════ APP SHELL ══════════════════ -->
+<!-- APP SHELL -->
 <div id="app">
-  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-brand">YO<span>BU</span></div>
     <div class="topbar-right">
       <div class="notification-bell" title="Notifications">🔔<span class="notif-dot"></span></div>
       <div class="topbar-user" id="topbarUser"></div>
       <div class="topbar-avatar" id="topbarAvatar"></div>
-      <button class="btn-logout" onclick="logout()">Déconnexion</button>
+      <button class="btn-logout" onclick="logout()">Sign Out</button>
     </div>
   </div>
 
-  <!-- ──── ADMIN DASHBOARD ──── -->
+  <!-- ADMIN DASHBOARD -->
   <div id="adminDash">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
       <div>
-        <h1 style="font-size:1.6rem;font-weight:800;color:#0F172A">Tableau de bord Admin</h1>
-        <p style="color:#64748B;font-size:.88rem;margin-top:4px">Vue d'ensemble de la plateforme YOBU</p>
+        <h1 style="font-size:1.6rem;font-weight:800;color:#0F172A">Admin Dashboard</h1>
+        <p style="color:#64748B;font-size:.88rem;margin-top:4px">YOBU Platform Overview</p>
       </div>
-      <button class="btn btn-brand" onclick="openModal('addDriverModal')">➕ Ajouter un livreur</button>
+      <button class="btn btn-brand" onclick="openModal('addDriverModal')">➕ Add Driver</button>
     </div>
-
-    <!-- Stats -->
     <div class="stats-grid" id="adminStats">
-      <div class="stat-card purple"><div class="stat-icon purple">📦</div><div class="stat-value" id="statRoutes">—</div><div class="stat-label">Livraisons totales</div><div class="stat-change up">↑ 12% ce mois</div></div>
-      <div class="stat-card green"><div class="stat-icon green">👥</div><div class="stat-value" id="statMerchants">—</div><div class="stat-label">Marchands actifs</div><div class="stat-change up">↑ 3 nouveaux</div></div>
-      <div class="stat-card orange"><div class="stat-icon orange">🚴</div><div class="stat-value" id="statDrivers">—</div><div class="stat-label">Livreurs</div><div class="stat-change up">↑ disponibles</div></div>
-      <div class="stat-card blue"><div class="stat-icon blue">💰</div><div class="stat-value" id="statRevenue">—</div><div class="stat-label">Revenus (FCFA)</div><div class="stat-change up">↑ 8% ce mois</div></div>
+      <div class="stat-card purple"><div class="stat-icon purple">📦</div><div class="stat-value" id="statRoutes">—</div><div class="stat-label">Total Deliveries</div><div class="stat-change up">↑ 12% this month</div></div>
+      <div class="stat-card green"><div class="stat-icon green">👥</div><div class="stat-value" id="statMerchants">—</div><div class="stat-label">Active Merchants</div><div class="stat-change up">↑ 3 new this week</div></div>
+      <div class="stat-card orange"><div class="stat-icon orange">🚗</div><div class="stat-value" id="statDrivers">—</div><div class="stat-label">Drivers</div><div class="stat-change up">● Available now</div></div>
+      <div class="stat-card blue"><div class="stat-icon blue">💵</div><div class="stat-value" id="statRevenue">—</div><div class="stat-label">Revenue (USD)</div><div class="stat-change up">↑ 8% this month</div></div>
     </div>
-
     <div class="admin-grid-3">
-      <!-- Left column -->
       <div>
-        <!-- All Routes -->
         <div class="table-card">
           <div class="table-header">
-            <h3>🗺️ Toutes les livraisons</h3>
-            <button class="btn btn-sm btn-outline" onclick="loadAdminRoutes()">↻ Actualiser</button>
+            <h3>🗺️ All Deliveries</h3>
+            <button class="btn btn-sm btn-outline" onclick="loadAdminRoutes()">↻ Refresh</button>
           </div>
           <div style="overflow-x:auto">
             <table id="adminRoutesTable">
-              <thead><tr><th>ID</th><th>Marchand</th><th>Destination</th><th>Prix</th><th>Statut</th><th>Livreur</th><th>Actions</th></tr></thead>
-              <tbody id="adminRoutesTbody"><tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:32px">Chargement…</td></tr></tbody>
+              <thead><tr><th>ID</th><th>Merchant</th><th>Destination</th><th>Price</th><th>Status</th><th>Driver</th><th>Actions</th></tr></thead>
+              <tbody id="adminRoutesTbody"><tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:32px">Loading…</td></tr></tbody>
             </table>
           </div>
         </div>
-
-        <!-- Merchants -->
         <div class="table-card">
-          <div class="table-header">
-            <h3>🏪 Top Marchands</h3>
-          </div>
-          <table id="adminMerchantsTable">
-            <thead><tr><th>#</th><th>Nom</th><th>Email</th><th>Livraisons</th><th>Statut</th></tr></thead>
-            <tbody id="adminMerchantsTbody"><tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:32px">Chargement…</td></tr></tbody>
+          <div class="table-header"><h3>🏪 Top Merchants</h3></div>
+          <table>
+            <thead><tr><th>#</th><th>Name</th><th>Email</th><th>Deliveries</th><th>Status</th></tr></thead>
+            <tbody id="adminMerchantsTbody"><tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:32px">Loading…</td></tr></tbody>
           </table>
         </div>
       </div>
-
-      <!-- Right column -->
       <div>
-        <!-- Drivers list -->
         <div class="table-card" style="margin-bottom:24px">
           <div class="table-header">
-            <h3>🚴 Livreurs</h3>
-            <button class="btn btn-sm btn-brand" onclick="openModal('addDriverModal')">+ Nouveau</button>
+            <h3>🚗 Drivers</h3>
+            <button class="btn btn-sm btn-brand" onclick="openModal('addDriverModal')">+ New</button>
           </div>
           <table>
-            <thead><tr><th>Nom</th><th>Véhicule</th><th>Statut</th></tr></thead>
-            <tbody id="adminDriversTbody"><tr><td colspan="3" style="text-align:center;color:#94A3B8;padding:24px">Chargement…</td></tr></tbody>
+            <thead><tr><th>Name</th><th>Vehicle</th><th>Status</th></tr></thead>
+            <tbody id="adminDriversTbody"><tr><td colspan="3" style="text-align:center;color:#94A3B8;padding:24px">Loading…</td></tr></tbody>
           </table>
         </div>
-
-        <!-- Activity Feed -->
         <div class="table-card">
-          <div class="table-header"><h3>📋 Activité récente</h3></div>
+          <div class="table-header"><h3>📋 Recent Activity</h3></div>
           <div class="activity-feed" id="activityFeed">
             <div class="activity-item"><div class="activity-dot" style="background:var(--green)"></div><div class="activity-text skeleton" style="height:14px;width:80%"></div><div class="activity-time">…</div></div>
           </div>
         </div>
       </div>
     </div>
-  </div><!-- /adminDash -->
+  </div>
 
-  <!-- ──── MERCHANT DASHBOARD ──── -->
+  <!-- MERCHANT DASHBOARD -->
   <div id="merchantDash">
     <nav class="sidebar">
       <div class="sidebar-logo">
         <h2>YO<span>BU</span></h2>
-        <p id="merchantName">Marchand</p>
+        <p id="merchantName">Merchant</p>
       </div>
       <a class="nav-item active" onclick="switchMerchantTab('dashboard',this)"><span class="nav-icon">📊</span>Dashboard</a>
-      <a class="nav-item" onclick="switchMerchantTab('orders',this)"><span class="nav-icon">📦</span>Commandes</a>
-      <a class="nav-item" onclick="switchMerchantTab('routes',this)"><span class="nav-icon">🗺️</span>Routes</a>
-      <a class="nav-item" onclick="switchMerchantTab('drivers',this)"><span class="nav-icon">🚴</span>Livreurs</a>
+      <a class="nav-item" onclick="switchMerchantTab('orders',this)"><span class="nav-icon">📦</span>Orders</a>
+      <a class="nav-item" onclick="switchMerchantTab('routes',this)"><span class="nav-icon">🗺️</span>New Delivery</a>
+      <a class="nav-item" onclick="switchMerchantTab('drivers',this)"><span class="nav-icon">🚗</span>Drivers</a>
       <a class="nav-item" onclick="switchMerchantTab('map',this)"><span class="nav-icon">📍</span>Live Map</a>
-      <a class="nav-item" onclick="switchMerchantTab('invoices',this)"><span class="nav-icon">🧾</span>Factures</a>
+      <a class="nav-item" onclick="switchMerchantTab('invoices',this)"><span class="nav-icon">🧾</span>Invoices</a>
       <a class="nav-item" onclick="switchMerchantTab('analytics',this)"><span class="nav-icon">📈</span>Analytics</a>
-      <a class="nav-item" onclick="switchMerchantTab('settings',this)"><span class="nav-icon">⚙️</span>Paramètres</a>
+      <a class="nav-item" onclick="switchMerchantTab('settings',this)"><span class="nav-icon">⚙️</span>Settings</a>
     </nav>
     <div class="merchant-content">
       <div class="content-area">
 
         <!-- DASHBOARD tab -->
         <div id="m-dashboard" class="tab-pane active">
-          <div class="page-title">Bienvenue 👋</div>
-          <div class="page-subtitle" id="merchantDate">Tableau de bord marchand</div>
+          <div class="page-title">Welcome back 👋</div>
+          <div class="page-subtitle" id="merchantDate">Merchant Dashboard</div>
           <div class="stats-grid">
-            <div class="stat-card purple"><div class="stat-icon purple">🚀</div><div class="stat-value" id="mStatActive">—</div><div class="stat-label">Routes actives</div></div>
-            <div class="stat-card green"><div class="stat-icon green">✅</div><div class="stat-value" id="mStatDone">—</div><div class="stat-label">Livraisons complétées</div></div>
-            <div class="stat-card orange"><div class="stat-icon orange">⏳</div><div class="stat-value" id="mStatPending">—</div><div class="stat-label">En attente</div></div>
-            <div class="stat-card blue"><div class="stat-icon blue">💵</div><div class="stat-value" id="mStatCost">—</div><div class="stat-label">Dépenses (FCFA)</div></div>
+            <div class="stat-card purple"><div class="stat-icon purple">🚀</div><div class="stat-value" id="mStatActive">—</div><div class="stat-label">Active Routes</div></div>
+            <div class="stat-card green"><div class="stat-icon green">✅</div><div class="stat-value" id="mStatDone">—</div><div class="stat-label">Delivered</div></div>
+            <div class="stat-card orange"><div class="stat-icon orange">⏳</div><div class="stat-value" id="mStatPending">—</div><div class="stat-label">Pending</div></div>
+            <div class="stat-card blue"><div class="stat-icon blue">💵</div><div class="stat-value" id="mStatCost">—</div><div class="stat-label">Total Spent (USD)</div></div>
           </div>
           <div class="admin-grid">
             <div class="table-card">
-              <div class="table-header"><h3>Routes récentes</h3><button class="btn btn-sm btn-brand" onclick="switchMerchantTab('routes',document.querySelector('.nav-item:nth-child(4)'))">+ Nouvelle route</button></div>
+              <div class="table-header"><h3>Recent Deliveries</h3><button class="btn btn-sm btn-brand" onclick="switchMerchantTab('routes',document.querySelectorAll('.nav-item')[2])">+ New Delivery</button></div>
               <table>
-                <thead><tr><th>Destination</th><th>Prix</th><th>Statut</th><th>Livreur</th></tr></thead>
-                <tbody id="mRecentRoutes"><tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:24px">Chargement…</td></tr></tbody>
+                <thead><tr><th>Recipient</th><th>Price</th><th>Status</th><th>Driver</th></tr></thead>
+                <tbody id="mRecentRoutes"><tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:24px">Loading…</td></tr></tbody>
               </table>
             </div>
             <div class="table-card">
-              <div class="table-header"><h3>📋 Activité</h3></div>
+              <div class="table-header"><h3>📋 Activity</h3></div>
               <div class="activity-feed" id="mActivityFeed">
-                <div class="activity-item"><div class="activity-dot" style="background:var(--brand)"></div><div class="activity-text">Chargement de l'activité…</div></div>
+                <div class="activity-item"><div class="activity-dot" style="background:var(--brand)"></div><div class="activity-text">Loading activity…</div></div>
               </div>
             </div>
           </div>
@@ -408,55 +402,100 @@ tr:hover td{background:#FAFBFC}
 
         <!-- ORDERS tab -->
         <div id="m-orders" class="tab-pane">
-          <div class="page-title">Commandes</div>
-          <div class="page-subtitle">Historique et suivi de vos commandes</div>
+          <div class="page-title">Orders</div>
+          <div class="page-subtitle">Track and manage all your deliveries</div>
           <div class="table-card">
-            <div class="table-header"><h3>Toutes les commandes</h3><button class="btn btn-sm btn-outline" onclick="loadMerchantRoutes()">↻ Actualiser</button></div>
+            <div class="table-header"><h3>All Orders</h3><button class="btn btn-sm btn-outline" onclick="loadMerchantRoutes()">↻ Refresh</button></div>
             <div style="overflow-x:auto">
               <table>
-                <thead><tr><th>ID</th><th>Destination</th><th>Adresse</th><th>Prix (FCFA)</th><th>Statut</th><th>Livreur</th><th>Date</th></tr></thead>
-                <tbody id="ordersTableBody"><tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:32px">Chargement…</td></tr></tbody>
+                <thead><tr><th>ID</th><th>Recipient</th><th>Address</th><th>Price (USD)</th><th>Stops</th><th>Status</th><th>Driver</th><th>Date</th></tr></thead>
+                <tbody id="ordersTableBody"><tr><td colspan="8" style="text-align:center;color:#94A3B8;padding:32px">Loading…</td></tr></tbody>
               </table>
             </div>
           </div>
         </div>
 
-        <!-- ROUTES tab -->
+        <!-- NEW DELIVERY tab -->
         <div id="m-routes" class="tab-pane">
-          <div class="page-title">Gérer les Routes</div>
-          <div class="page-subtitle">Créez et suivez vos livraisons</div>
+          <div class="page-title">Create New Delivery</div>
+          <div class="page-subtitle">Build a multi-stop delivery order with full details</div>
+
           <div class="form-panel">
-            <h3>➕ Créer une nouvelle route</h3>
-            <div class="form-row">
-              <div class="form-group"><label>Nom du destinataire</label><input type="text" id="rName" placeholder="Jean Dupont"></div>
-              <div class="form-group"><label>Téléphone</label><input type="text" id="rPhone" placeholder="+221 XX XXX XXXX"></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group"><label>Adresse de livraison</label><input type="text" id="rAddress" placeholder="Rue, Quartier, Ville"></div>
-              <div class="form-group"><label>Description colis</label><input type="text" id="rDesc" placeholder="Documents, colis fragile…"></div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Type de livraison</label>
-                <select id="rType" onchange="calcPrice()">
-                  <option value="standard">Standard (24h) — 2 000 FCFA</option>
-                  <option value="express">Express (4h) — 5 000 FCFA</option>
-                  <option value="same_day">Même jour — 3 500 FCFA</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Prix estimé</label>
-                <input type="text" id="rPrice" value="2 000 FCFA" readonly style="background:#F8FAFC;color:#6C63FF;font-weight:700">
+            <h3>📦 Delivery Order</h3>
+
+            <!-- Pickup Info -->
+            <div class="form-section">
+              <div class="form-section-title">📍 Pickup Information</div>
+              <div class="form-group"><label>Pickup Address</label><input type="text" id="rPickupAddress" placeholder="456 W Madison St, Chicago, IL 60661"></div>
+              <div class="form-row">
+                <div class="form-group"><label>Pickup Contact Name</label><input type="text" id="rPickupContact" placeholder="Jane Smith"></div>
+                <div class="form-group"><label>Pickup Contact Phone</label><input type="text" id="rPickupPhone" placeholder="(312) 555-0100"></div>
               </div>
             </div>
-            <button class="btn btn-brand" onclick="createRoute()">🚀 Créer la livraison</button>
+
+            <!-- Package Info -->
+            <div class="form-section">
+              <div class="form-section-title">📋 Package Details</div>
+              <div class="form-row">
+                <div class="form-group"><label>Package Description</label><input type="text" id="rDesc" placeholder="Organic grocery box, fragile electronics…"></div>
+                <div class="form-group">
+                  <label>Priority</label>
+                  <select id="rPriority">
+                    <option value="normal">Normal</option>
+                    <option value="high">High Priority</option>
+                    <option value="urgent">Urgent 🔥</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group"><label>Special Delivery Instructions</label><textarea id="rInstructions" placeholder="Leave at front desk, call upon arrival, fragile items…"></textarea></div>
+              <div class="toggle-row">
+                <label class="toggle-item"><input type="checkbox" id="rSigRequired"> Signature Required</label>
+                <label class="toggle-item"><input type="checkbox" id="rPhotoRequired"> Photo Proof Required</label>
+              </div>
+            </div>
+
+            <!-- Delivery Type & Price -->
+            <div class="form-section">
+              <div class="form-section-title">⚡ Service & Pricing</div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Service Type</label>
+                  <select id="rType" onchange="calcPrice()">
+                    <option value="standard">Standard (Next Day) — from $5.99</option>
+                    <option value="same_day">Same Day — from $8.99</option>
+                    <option value="express">Express (2–4 hrs) — from $12.99</option>
+                  </select>
+                </div>
+                <div>
+                  <div class="price-display">
+                    <div class="price-val" id="rPriceDisplay">$5.99</div>
+                    <div class="price-label">Estimated Total</div>
+                    <div class="price-breakdown" id="rPriceBreakdown">Base $5.99 + 1 stop × $2.50</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stops -->
+            <div class="form-section">
+              <div class="form-section-title">🏁 Delivery Stops</div>
+              <div id="stopsContainer"></div>
+              <button class="add-stop-btn" onclick="addStop()">+ Add Another Stop</button>
+            </div>
+
+            <div style="margin-top:24px;display:flex;gap:12px">
+              <button class="btn btn-brand" style="padding:14px 28px;font-size:.95rem" onclick="createRoute()">🚀 Create Delivery Order</button>
+              <button class="btn btn-outline" onclick="resetRouteForm()">✕ Clear Form</button>
+            </div>
           </div>
+
+          <!-- My Routes -->
           <div class="table-card">
-            <div class="table-header"><h3>Mes Routes</h3><button class="btn btn-sm btn-outline" onclick="loadMerchantRoutes()">↻ Actualiser</button></div>
+            <div class="table-header"><h3>My Delivery Orders</h3><button class="btn btn-sm btn-outline" onclick="loadMerchantRoutes()">↻ Refresh</button></div>
             <div style="overflow-x:auto">
               <table>
-                <thead><tr><th>ID</th><th>Destinataire</th><th>Adresse</th><th>Prix</th><th>Statut</th><th>Livreur</th><th>Progression</th></tr></thead>
-                <tbody id="merchantRoutesTbody"><tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:32px">Chargement…</td></tr></tbody>
+                <thead><tr><th>ID</th><th>Pickup</th><th>Stops</th><th>Price</th><th>Priority</th><th>Status</th><th>Driver</th><th>Progress</th></tr></thead>
+                <tbody id="merchantRoutesTbody"><tr><td colspan="8" style="text-align:center;color:#94A3B8;padding:32px">Loading…</td></tr></tbody>
               </table>
             </div>
           </div>
@@ -464,13 +503,13 @@ tr:hover td{background:#FAFBFC}
 
         <!-- DRIVERS tab -->
         <div id="m-drivers" class="tab-pane">
-          <div class="page-title">Livreurs</div>
-          <div class="page-subtitle">Liste des livreurs disponibles sur la plateforme</div>
+          <div class="page-title">Drivers</div>
+          <div class="page-subtitle">Available drivers on the YOBU platform</div>
           <div class="table-card">
-            <div class="table-header"><h3>🚴 Livreurs disponibles</h3></div>
+            <div class="table-header"><h3>🚗 Available Drivers</h3></div>
             <table>
-              <thead><tr><th>Nom</th><th>Email</th><th>Véhicule</th><th>Statut</th><th>Routes assignées</th></tr></thead>
-              <tbody id="merchantDriversTbody"><tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:32px">Chargement…</td></tr></tbody>
+              <thead><tr><th>Name</th><th>Email</th><th>Vehicle</th><th>Status</th><th>Assigned Routes</th></tr></thead>
+              <tbody id="merchantDriversTbody"><tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:32px">Loading…</td></tr></tbody>
             </table>
           </div>
         </div>
@@ -478,28 +517,28 @@ tr:hover td{background:#FAFBFC}
         <!-- MAP tab -->
         <div id="m-map" class="tab-pane">
           <div class="page-title">Live Map</div>
-          <div class="page-subtitle">Positions en temps réel des livraisons actives</div>
+          <div class="page-subtitle">Real-time positions of active deliveries</div>
           <div class="map-container" id="merchantMap" style="height:500px"></div>
           <div class="table-card" style="margin-top:20px">
-            <div class="table-header"><h3>Routes actives sur la carte</h3></div>
-            <table><thead><tr><th>Destination</th><th>Livreur</th><th>ETA</th><th>Statut</th></tr></thead>
-              <tbody id="mapRoutesList"><tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:24px">Chargement…</td></tr></tbody>
+            <div class="table-header"><h3>Active Routes on Map</h3></div>
+            <table><thead><tr><th>Recipient</th><th>Driver</th><th>ETA</th><th>Status</th></tr></thead>
+              <tbody id="mapRoutesList"><tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:24px">Loading…</td></tr></tbody>
             </table>
           </div>
         </div>
 
         <!-- INVOICES tab -->
         <div id="m-invoices" class="tab-pane">
-          <div class="page-title">Factures</div>
-          <div class="page-subtitle">Historique de facturation</div>
+          <div class="page-title">Invoices</div>
+          <div class="page-subtitle">Billing history and invoice management</div>
           <div style="display:flex;gap:12px;margin-bottom:20px">
-            <button class="btn btn-brand" onclick="generateInvoice()">🧾 Générer une facture</button>
-            <button class="btn btn-outline" onclick="loadInvoices()">↻ Actualiser</button>
+            <button class="btn btn-brand" onclick="generateInvoice()">🧾 Generate Invoice</button>
+            <button class="btn btn-outline" onclick="loadInvoices()">↻ Refresh</button>
           </div>
           <div class="table-card">
             <table>
-              <thead><tr><th>Réf.</th><th>Montant</th><th>Statut</th><th>Date</th><th>Actions</th></tr></thead>
-              <tbody id="invoicesTbody"><tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:32px">Chargement…</td></tr></tbody>
+              <thead><tr><th>Invoice #</th><th>Amount (USD)</th><th>Deliveries</th><th>Status</th><th>Date</th><th>Actions</th></tr></thead>
+              <tbody id="invoicesTbody"><tr><td colspan="6" style="text-align:center;color:#94A3B8;padding:32px">Loading…</td></tr></tbody>
             </table>
           </div>
         </div>
@@ -507,20 +546,20 @@ tr:hover td{background:#FAFBFC}
         <!-- ANALYTICS tab -->
         <div id="m-analytics" class="tab-pane">
           <div class="page-title">Analytics</div>
-          <div class="page-subtitle">Performance de vos livraisons</div>
+          <div class="page-subtitle">Delivery performance insights</div>
           <div class="stats-grid" style="margin-bottom:24px">
-            <div class="stat-card purple"><div class="stat-icon purple">📊</div><div class="stat-value" id="anTotal">—</div><div class="stat-label">Total livraisons</div></div>
-            <div class="stat-card green"><div class="stat-icon green">✅</div><div class="stat-value" id="anSuccess">—</div><div class="stat-label">Taux de succès</div></div>
-            <div class="stat-card orange"><div class="stat-icon orange">⚡</div><div class="stat-value" id="anExpress">—</div><div class="stat-label">Livraisons express</div></div>
-            <div class="stat-card blue"><div class="stat-icon blue">💰</div><div class="stat-value" id="anSpend">—</div><div class="stat-label">Total dépensé</div></div>
+            <div class="stat-card purple"><div class="stat-icon purple">📊</div><div class="stat-value" id="anTotal">—</div><div class="stat-label">Total Deliveries</div></div>
+            <div class="stat-card green"><div class="stat-icon green">✅</div><div class="stat-value" id="anSuccess">—</div><div class="stat-label">Success Rate</div></div>
+            <div class="stat-card orange"><div class="stat-icon orange">⚡</div><div class="stat-value" id="anExpress">—</div><div class="stat-label">Express Orders</div></div>
+            <div class="stat-card blue"><div class="stat-icon blue">💵</div><div class="stat-value" id="anSpend">—</div><div class="stat-label">Total Spent</div></div>
           </div>
           <div class="admin-grid">
             <div class="table-card">
-              <div class="table-header"><h3>Répartition par statut</h3></div>
+              <div class="table-header"><h3>Breakdown by Status</h3></div>
               <div style="padding:20px" id="statusBreakdown"></div>
             </div>
             <div class="table-card">
-              <div class="table-header"><h3>Répartition par type</h3></div>
+              <div class="table-header"><h3>Breakdown by Service Type</h3></div>
               <div style="padding:20px" id="typeBreakdown"></div>
             </div>
           </div>
@@ -528,131 +567,155 @@ tr:hover td{background:#FAFBFC}
 
         <!-- SETTINGS tab -->
         <div id="m-settings" class="tab-pane">
-          <div class="page-title">Paramètres</div>
-          <div class="page-subtitle">Gérez votre compte marchand</div>
+          <div class="page-title">Settings</div>
+          <div class="page-subtitle">Manage your merchant account</div>
           <div class="form-panel">
-            <h3>👤 Informations du compte</h3>
+            <h3>👤 Account Information</h3>
             <div class="form-row">
-              <div class="form-group"><label>Nom de la boutique</label><input type="text" id="settingName" placeholder="Nom de votre boutique"></div>
-              <div class="form-group"><label>Email</label><input type="email" id="settingEmail" placeholder="email@boutique.com"></div>
+              <div class="form-group"><label>Business Name</label><input type="text" id="settingName" placeholder="Your Business Name"></div>
+              <div class="form-group"><label>Email</label><input type="email" id="settingEmail" placeholder="you@business.com"></div>
             </div>
-            <div class="form-group"><label>Téléphone</label><input type="text" id="settingPhone" placeholder="+221 XX XXX XXXX"></div>
-            <button class="btn btn-brand" onclick="showToast('Paramètres sauvegardés !','success')">💾 Sauvegarder</button>
+            <div class="form-row">
+              <div class="form-group"><label>Phone</label><input type="text" id="settingPhone" placeholder="(555) 000-0000"></div>
+              <div class="form-group"><label>Default Pickup Address</label><input type="text" id="settingAddress" placeholder="123 Main St, Chicago, IL"></div>
+            </div>
+            <button class="btn btn-brand" onclick="showToast('Settings saved!','success')">💾 Save Changes</button>
           </div>
           <div class="form-panel">
             <h3>🔔 Notifications</h3>
             <div style="display:flex;flex-direction:column;gap:14px">
-              <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.9rem"><input type="checkbox" checked style="width:16px;height:16px;accent-color:var(--brand)"> Email lors d'une nouvelle livraison</label>
-              <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.9rem"><input type="checkbox" checked style="width:16px;height:16px;accent-color:var(--brand)"> SMS lors d'une livraison complétée</label>
-              <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.9rem"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--brand)"> Rapport hebdomadaire</label>
+              <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.9rem"><input type="checkbox" checked style="width:16px;height:16px;accent-color:var(--brand)"> Email when a new delivery is created</label>
+              <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.9rem"><input type="checkbox" checked style="width:16px;height:16px;accent-color:var(--brand)"> SMS when a delivery is completed</label>
+              <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.9rem"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--brand)"> Weekly delivery report</label>
+              <label style="display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.9rem"><input type="checkbox" checked style="width:16px;height:16px;accent-color:var(--brand)"> Alert on failed delivery</label>
             </div>
           </div>
         </div>
 
       </div>
     </div>
-  </div><!-- /merchantDash -->
+  </div>
 
-  <!-- ──── DRIVER DASHBOARD ──── -->
+  <!-- DRIVER DASHBOARD -->
   <div id="driverDash">
     <div class="driver-phone">
       <div class="earnings-card">
-        <div class="earnings-label">Gains aujourd'hui</div>
-        <div class="earnings-amount" id="driverEarningsToday">0 FCFA</div>
-        <div class="earnings-period">Ce mois: <span id="driverEarningsMonth">—</span></div>
+        <div class="earnings-label">Today's Earnings</div>
+        <div class="earnings-amount" id="driverEarningsToday">$0.00</div>
+        <div class="earnings-period">This month: <span id="driverEarningsMonth">—</span></div>
         <div class="earnings-stats">
-          <div class="earnings-stat"><div class="earnings-stat-val" id="driverCompleted">0</div><div class="earnings-stat-label">Complétées</div></div>
-          <div class="earnings-stat"><div class="earnings-stat-val" id="driverPending">0</div><div class="earnings-stat-label">En attente</div></div>
+          <div class="earnings-stat"><div class="earnings-stat-val" id="driverCompleted">0</div><div class="earnings-stat-label">Completed</div></div>
+          <div class="earnings-stat"><div class="earnings-stat-val" id="driverPending">0</div><div class="earnings-stat-label">Pending</div></div>
         </div>
       </div>
-
       <div style="margin-bottom:20px">
-        <div class="section-title">📍 Ma position <span style="font-size:.75rem;color:#22C55E;font-weight:500">● En ligne</span></div>
+        <div class="section-title">📍 My Location <span style="font-size:.75rem;color:#22C55E;font-weight:500">● Online</span></div>
         <div class="map-container" id="driverMap" style="height:200px"></div>
       </div>
-
-      <div class="section-title">🗺️ Routes disponibles</div>
+      <div class="section-title">🗺️ My Assigned Routes</div>
       <div id="driverRoutesList">
-        <div style="text-align:center;padding:40px;color:#94A3B8">Chargement des routes…</div>
+        <div style="text-align:center;padding:40px;color:#94A3B8">Loading routes…</div>
       </div>
     </div>
-  </div><!-- /driverDash -->
+  </div>
 
-  <!-- ──── CUSTOMER TRACKING ──── -->
+  <!-- CUSTOMER TRACKING -->
   <div id="customerTrack">
-    <div style="max-width:900px;margin:0 auto">
+    <div style="max-width:940px;margin:0 auto">
       <div style="margin-bottom:24px">
-        <div class="page-title">🔍 Suivre ma livraison</div>
+        <div class="page-title">🔍 Track Your Delivery</div>
         <div style="display:flex;gap:12px;margin-top:16px">
-          <input type="text" id="trackingToken" placeholder="Entrez votre code de suivi…" style="flex:1;padding:12px 16px;border:1.5px solid #E2E8F0;border-radius:10px;font-size:.95rem">
-          <button class="btn btn-brand" onclick="trackDelivery()">🔍 Suivre</button>
+          <input type="text" id="trackingToken" placeholder="Enter your tracking code…" style="flex:1;padding:12px 16px;border:1.5px solid #E2E8F0;border-radius:10px;font-size:.95rem">
+          <button class="btn btn-brand" onclick="trackDelivery()">🔍 Track</button>
         </div>
+        <p style="font-size:.8rem;color:#94A3B8;margin-top:8px">Your tracking code was sent via SMS when your order was placed.</p>
       </div>
       <div id="trackingResult" style="display:none">
         <div class="tracking-layout">
-          <div class="tracking-card">
-            <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px">📦 Statut de livraison</h3>
-            <div class="eta-display">
-              <div class="eta-mins" id="etaMins">—</div>
-              <div class="eta-unit">minutes estimées</div>
-              <div class="eta-address" id="deliveryAddress">—</div>
-            </div>
-            <div class="driver-info-card">
-              <div class="driver-avatar" id="driverInitials">—</div>
-              <div>
-                <div class="driver-name" id="trackDriverName">Livreur assigné</div>
-                <div class="driver-vehicle" id="trackDriverVehicle">Moto — EN ROUTE</div>
-                <div class="star-rating">★★★★★</div>
+          <div>
+            <div class="tracking-card">
+              <h3 style="font-size:1rem;font-weight:700;margin-bottom:16px">📦 Delivery Status</h3>
+              <div class="eta-display">
+                <div class="eta-mins" id="etaMins">—</div>
+                <div class="eta-unit">minutes estimated</div>
+                <div class="eta-address" id="deliveryAddress">—</div>
               </div>
+              <div class="driver-info-card">
+                <div class="driver-avatar-sm" id="driverInitials">—</div>
+                <div>
+                  <div class="driver-name" id="trackDriverName">Awaiting driver assignment</div>
+                  <div class="driver-vehicle" id="trackDriverVehicle">—</div>
+                  <div class="star-rating">★★★★★</div>
+                </div>
+              </div>
+              <div class="status-timeline" id="statusTimeline" style="margin-top:24px"></div>
             </div>
-            <div class="status-timeline" id="statusTimeline" style="margin-top:24px"></div>
+            <div class="tracking-card">
+              <h3 style="font-size:1rem;font-weight:700;margin-bottom:14px">📋 Package Details</h3>
+              <div id="trackingDetails" style="font-size:.88rem;color:#475569;line-height:1.9"></div>
+            </div>
           </div>
           <div>
-            <div class="tracking-card" style="margin-bottom:20px">
-              <h3 style="font-size:1rem;font-weight:700;margin-bottom:14px">🗺️ Position en temps réel</h3>
+            <div class="tracking-card">
+              <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px">🗺️ Live Location</h3>
               <div class="map-container" id="trackingMap" style="height:280px"></div>
             </div>
             <div class="tracking-card">
-              <h3 style="font-size:1rem;font-weight:700;margin-bottom:14px">📋 Détails du colis</h3>
-              <div id="trackingDetails" style="font-size:.88rem;color:#475569;line-height:1.8"></div>
+              <h3 style="font-size:1rem;font-weight:700;margin-bottom:14px">🎫 Your Tracking Code</h3>
+              <div style="text-align:center">
+                <div class="qr-placeholder">▦</div>
+                <code id="trackingCode" style="font-size:1.1rem;font-weight:700;color:#0F172A;letter-spacing:2px"></code>
+                <p style="font-size:.78rem;color:#94A3B8;margin-top:6px">Show this QR code to receive your package</p>
+              </div>
+            </div>
+            <div id="podSection" style="display:none">
+              <div class="tracking-card pod-card">
+                <div class="pod-title">✅ Proof of Delivery</div>
+                <div id="podDetails" style="font-size:.85rem;color:#166534"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div><!-- /customerTrack -->
+  </div>
 
 </div><!-- /app -->
 
-<!-- ══════════ MODALS ══════════ -->
+<!-- MODALS -->
 
 <!-- Add Driver Modal -->
 <div class="modal-overlay" id="addDriverModal">
   <div class="modal">
-    <h2>🚴 Ajouter un livreur</h2>
-    <p>Créez un nouveau compte livreur sur la plateforme YOBU</p>
+    <h2>🚗 Add New Driver</h2>
+    <p class="modal-sub">Create a new driver account on the YOBU platform</p>
     <div class="form-row">
-      <div class="form-group"><label>Prénom</label><input type="text" id="driverFirstName" placeholder="Jean"></div>
-      <div class="form-group"><label>Nom</label><input type="text" id="driverLastName" placeholder="Diallo"></div>
+      <div class="form-group"><label>First Name</label><input type="text" id="driverFirstName" placeholder="James"></div>
+      <div class="form-group"><label>Last Name</label><input type="text" id="driverLastName" placeholder="Mitchell"></div>
     </div>
-    <div class="form-group"><label>Email</label><input type="email" id="driverEmail" placeholder="jean.diallo@yobu.com"></div>
+    <div class="form-group"><label>Email</label><input type="email" id="driverEmail" placeholder="james.mitchell@email.com"></div>
     <div class="form-row">
-      <div class="form-group"><label>Mot de passe</label><input type="password" id="driverPass" placeholder="••••••••"></div>
-      <div class="form-group"><label>Téléphone</label><input type="text" id="driverTel" placeholder="+221 77 XXX XXXX"></div>
+      <div class="form-group"><label>Password</label><input type="password" id="driverPass" placeholder="••••••••"></div>
+      <div class="form-group"><label>Phone</label><input type="text" id="driverTel" placeholder="(312) 555-0100"></div>
     </div>
     <div class="form-group">
-      <label>Type de véhicule</label>
+      <label>Vehicle Type</label>
       <select id="driverVehicle">
-        <option value="moto">🏍️ Moto</option>
-        <option value="vélo">🚲 Vélo</option>
-        <option value="voiture">🚗 Voiture</option>
-        <option value="camionnette">🚐 Camionnette</option>
+        <option value="Bicycle">🚲 Bicycle</option>
+        <option value="Motorcycle">🏍️ Motorcycle</option>
+        <option value="Car">🚗 Car</option>
+        <option value="Van">🚐 Van</option>
+        <option value="Truck">🚛 Truck</option>
       </select>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>License Plate</label><input type="text" id="driverPlate" placeholder="IL ABC-1234"></div>
+      <div class="form-group"><label>Service Area</label><input type="text" id="driverArea" placeholder="Chicago, IL"></div>
     </div>
     <p class="error-msg" id="driverFormError" style="text-align:left"></p>
     <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeModal('addDriverModal')">Annuler</button>
-      <button class="btn btn-brand" onclick="submitAddDriver()">✅ Créer le livreur</button>
+      <button class="btn btn-outline" onclick="closeModal('addDriverModal')">Cancel</button>
+      <button class="btn btn-brand" onclick="submitAddDriver()">✅ Create Driver</button>
     </div>
   </div>
 </div>
@@ -660,29 +723,55 @@ tr:hover td{background:#FAFBFC}
 <!-- Assign Driver Modal -->
 <div class="modal-overlay" id="assignModal">
   <div class="modal">
-    <h2>🚴 Assigner un livreur</h2>
-    <p>Choisissez un livreur pour cette livraison</p>
+    <h2>🚗 Assign Driver</h2>
+    <p class="modal-sub">Select a driver for this delivery</p>
     <input type="hidden" id="assignRouteId">
     <div class="form-group">
-      <label>Livreur</label>
+      <label>Driver</label>
       <select id="assignDriverSelect"></select>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeModal('assignModal')">Annuler</button>
-      <button class="btn btn-brand" onclick="submitAssign()">Assigner</button>
+      <button class="btn btn-outline" onclick="closeModal('assignModal')">Cancel</button>
+      <button class="btn btn-brand" onclick="submitAssign()">Assign Driver</button>
     </div>
   </div>
 </div>
 
-<!-- Toast -->
-<div class="toast" id="toast"></div>
+<!-- Failed Delivery Modal -->
+<div class="modal-overlay" id="failedModal">
+  <div class="modal">
+    <h2>❌ Failed Delivery</h2>
+    <p class="modal-sub">Please select the reason for failed delivery</p>
+    <input type="hidden" id="failRouteId">
+    <input type="hidden" id="failStopIdx">
+    <div class="form-group">
+      <label>Failure Reason</label>
+      <select id="failReason">
+        <option value="no_answer">No answer / Nobody home</option>
+        <option value="wrong_address">Wrong address</option>
+        <option value="refused">Recipient refused delivery</option>
+        <option value="access_denied">Could not access location</option>
+        <option value="damaged">Package damaged — cannot deliver</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Additional Notes</label><textarea id="failNotes" placeholder="Describe the situation…"></textarea></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal('failedModal')">Cancel</button>
+      <button class="btn btn-danger" onclick="submitFailedDelivery()">Report Failed</button>
+    </div>
+  </div>
+</div>
 
-<!-- ══════════════════ SCRIPTS ══════════════════ -->
+<div class="toast" id="toast"></div>
 <script>
 const API = 'https://yobu-backend-production.up.railway.app/api';
 let currentRole = null, authToken = null, mapInstances = {};
+let stopCount = 0;
+// Driver local workflow state: { [routeId]: { phase, currentStopIdx, stops[] } }
+const _driverState = {};
 
-// ── AUTH ──────────────────────────────────────────────────────
+// ── AUTH
 function fillDemo(e,p){document.getElementById('loginEmail').value=e;document.getElementById('loginPassword').value=p}
 
 async function doLogin(){
@@ -690,22 +779,29 @@ async function doLogin(){
   const pass=document.getElementById('loginPassword').value;
   const err=document.getElementById('loginError');
   const btn=document.getElementById('loginBtn');
-  if(!email||!pass){err.textContent='Veuillez remplir tous les champs';return}
-  btn.textContent='Connexion…';btn.disabled=true;err.textContent='';
+  if(!email||!pass){err.textContent='Please fill in all fields';return}
+  btn.textContent='Signing in…';btn.disabled=true;err.textContent='';
   try{
     const r=await fetch(`${API}/auth/login`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password:pass})});
     const d=await r.json();
-    if(!r.ok)throw new Error(d.error||'Identifiants incorrects');
+    if(!r.ok)throw new Error(d.error||'Invalid credentials');
     authToken=d.token;currentRole=d.user?.role||d.role;
     localStorage.setItem('yobu_token',authToken);localStorage.setItem('yobu_role',currentRole);
     startApp(d.user||{email,role:currentRole});
   }catch(e){err.textContent=e.message}
-  btn.textContent='Se connecter';btn.disabled=false;
+  btn.textContent='Sign In';btn.disabled=false;
 }
 
 document.getElementById('loginPassword').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
 
-function logout(){localStorage.removeItem('yobu_token');localStorage.removeItem('yobu_role');authToken=null;currentRole=null;document.getElementById('loginScreen').style.display='flex';document.getElementById('app').style.display='none';Object.values(mapInstances).forEach(m=>{try{m.remove()}catch(e){}});mapInstances={}}
+function logout(){
+  localStorage.removeItem('yobu_token');localStorage.removeItem('yobu_role');
+  authToken=null;currentRole=null;
+  document.getElementById('loginScreen').style.display='flex';
+  document.getElementById('app').style.display='none';
+  Object.values(mapInstances).forEach(m=>{try{m.remove()}catch(e){}});
+  mapInstances={};
+}
 
 function startApp(user){
   document.getElementById('loginScreen').style.display='none';
@@ -713,10 +809,7 @@ function startApp(user){
   const init=(user.name||user.email||'U').charAt(0).toUpperCase();
   document.getElementById('topbarAvatar').textContent=init;
   document.getElementById('topbarUser').textContent=user.name||user.email||'';
-  document.getElementById('adminDash').style.display='none';
-  document.getElementById('merchantDash').style.display='none';
-  document.getElementById('driverDash').style.display='none';
-  document.getElementById('customerTrack').style.display='none';
+  ['adminDash','merchantDash','driverDash','customerTrack'].forEach(id=>document.getElementById(id).style.display='none');
   if(currentRole==='admin'){document.getElementById('adminDash').style.display='block';initAdmin()}
   else if(currentRole==='merchant'){document.getElementById('merchantDash').style.display='flex';initMerchant(user)}
   else if(currentRole==='driver'){document.getElementById('driverDash').style.display='block';initDriver()}
@@ -732,41 +825,49 @@ async function apiFetch(path,opts={}){
   return d;
 }
 
-// ── TOAST ──────────────────────────────────────────────────────
+// ── TOAST
 function showToast(msg,type='success'){
   const t=document.getElementById('toast');
-  t.textContent='';
-  const icon=type==='success'?'✅':'❌';
-  t.innerHTML=`<span>${icon}</span><span>${msg}</span>`;
+  t.innerHTML=`<span>${type==='success'?'✅':'❌'}</span><span>${msg}</span>`;
   t.className=`toast ${type} show`;
   setTimeout(()=>{t.className='toast'},3500);
 }
 
-// ── MODAL ──────────────────────────────────────────────────────
+// ── MODAL
 function openModal(id){document.getElementById(id).classList.add('open')}
 function closeModal(id){document.getElementById(id).classList.remove('open')}
 document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)o.classList.remove('open')}));
 
-// ── MAP HELPERS ──────────────────────────────────────────────
-function initMap(containerId,lat=14.6928,lng=-17.4467,zoom=13){
+// ── MAP
+function initMap(containerId,lat=41.8781,lng=-87.6298,zoom=12){
   if(mapInstances[containerId]){try{mapInstances[containerId].remove()}catch(e){}}
   const m=L.map(containerId).setView([lat,lng],zoom);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OSM'}).addTo(m);
   mapInstances[containerId]=m;return m;
 }
 
-// ── STATUS HELPERS ──────────────────────────────────────────
+// ── HELPERS
 function statusBadge(s){
-  const map={pending:'<span class="badge badge-orange">⏳ En attente</span>',assigned:'<span class="badge badge-blue">🚴 Assignée</span>',in_transit:'<span class="badge badge-purple">🚚 En route</span>',delivered:'<span class="badge badge-green">✅ Livrée</span>',cancelled:'<span class="badge badge-red">❌ Annulée</span>'};
+  const map={
+    pending:'<span class="badge badge-orange">⏳ Pending</span>',
+    assigned:'<span class="badge badge-blue">🚗 Assigned</span>',
+    in_transit:'<span class="badge badge-purple">🚚 In Transit</span>',
+    delivered:'<span class="badge badge-green">✅ Delivered</span>',
+    cancelled:'<span class="badge badge-red">❌ Cancelled</span>',
+    failed:'<span class="badge badge-red">❌ Failed</span>'
+  };
   return map[s]||`<span class="badge badge-gray">${s}</span>`;
 }
-function progressPct(s){return{pending:10,assigned:30,in_transit:70,delivered:100,cancelled:0}[s]||0}
-function fmtDate(d){if(!d)return'—';try{return new Date(d).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'})}catch(e){return d}}
-function fmtPrice(p){return p?Number(p).toLocaleString('fr-FR')+' FCFA':'—'}
+function progressPct(s){return{pending:10,assigned:30,in_transit:70,delivered:100,cancelled:0,failed:0}[s]||0}
+function fmtDate(d){if(!d)return'—';try{return new Date(d).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}catch(e){return d}}
+function fmtUSD(p){if(!p&&p!==0)return'—';return'$'+Number(p).toFixed(2)}
+function priorityBadge(p){
+  if(p==='urgent')return'<span class="badge badge-red">🔥 Urgent</span>';
+  if(p==='high')return'<span class="badge badge-orange">⬆ High</span>';
+  return'<span class="badge badge-gray">Normal</span>';
+}
 
-// ══════════════════════════════════════════════════════════════
-// ADMIN
-// ══════════════════════════════════════════════════════════════
+// ══════════ ADMIN ══════════
 async function initAdmin(){
   await Promise.all([loadAdminStats(),loadAdminRoutes(),loadAdminMerchants(),loadAdminDrivers()]);
   buildActivityFeed();
@@ -774,9 +875,7 @@ async function initAdmin(){
 
 async function loadAdminStats(){
   try{
-    const [routes,merchants,drivers]=await Promise.all([
-      apiFetch('/routes'),apiFetch('/merchants'),apiFetch('/drivers')
-    ]);
+    const [routes,merchants,drivers]=await Promise.all([apiFetch('/routes'),apiFetch('/merchants'),apiFetch('/drivers')]);
     const rArr=routes.routes||routes||[];
     const mArr=merchants.merchants||merchants||[];
     const dArr=drivers.drivers||drivers||[];
@@ -784,27 +883,26 @@ async function loadAdminStats(){
     document.getElementById('statMerchants').textContent=mArr.length;
     document.getElementById('statDrivers').textContent=dArr.length;
     const rev=rArr.filter(r=>r.status==='delivered').reduce((a,r)=>a+(Number(r.price)||0),0);
-    document.getElementById('statRevenue').textContent=rev?rev.toLocaleString('fr-FR'):'0';
+    document.getElementById('statRevenue').textContent=fmtUSD(rev);
   }catch(e){console.error(e)}
 }
 
 async function loadAdminRoutes(){
   const tb=document.getElementById('adminRoutesTbody');
-  tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:24px">Chargement…</td></tr>';
+  tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:24px">Loading…</td></tr>';
   try{
     const d=await apiFetch('/routes');
     const rows=d.routes||d||[];
-    if(!rows.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:24px">Aucune livraison</td></tr>';return}
-    tb.innerHTML=rows.map(r=>`
-      <tr>
-        <td><code style="font-size:.78rem;background:#F1F5F9;padding:2px 6px;border-radius:4px">#${(r.id||r._id||'').toString().slice(-6)}</code></td>
-        <td>${r.merchant?.name||r.merchantId||'—'}</td>
-        <td><strong>${r.recipientName||r.destination||'—'}</strong><br><small style="color:#94A3B8">${r.deliveryAddress||''}</small></td>
-        <td>${fmtPrice(r.price)}</td>
-        <td>${statusBadge(r.status)}</td>
-        <td>${r.driver?.name||r.driverId||'<span style="color:#94A3B8">Non assigné</span>'}</td>
-        <td><button class="btn btn-sm btn-outline" onclick="openAssignModal('${r.id||r._id}')">Assigner</button></td>
-      </tr>`).join('');
+    if(!rows.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:24px">No deliveries yet</td></tr>';return}
+    tb.innerHTML=rows.map(r=>`<tr>
+      <td><code style="font-size:.78rem;background:#F1F5F9;padding:2px 6px;border-radius:4px">#${(r.id||r._id||'').toString().slice(-6)}</code></td>
+      <td>${r.merchant?.name||r.merchantId||'—'}</td>
+      <td><strong>${r.recipientName||r.destination||'—'}</strong><br><small style="color:#94A3B8">${r.deliveryAddress||''}</small></td>
+      <td>${fmtUSD(r.price)}</td>
+      <td>${statusBadge(r.status)}</td>
+      <td>${r.driver?.name||r.driverId||'<span style="color:#94A3B8">Unassigned</span>'}</td>
+      <td><button class="btn btn-sm btn-outline" onclick="openAssignModal('${r.id||r._id}')">Assign</button></td>
+    </tr>`).join('');
   }catch(e){tb.innerHTML=`<tr><td colspan="7" style="text-align:center;color:#EF4444;padding:24px">${e.message}</td></tr>`}
 }
 
@@ -813,15 +911,14 @@ async function loadAdminMerchants(){
   try{
     const d=await apiFetch('/merchants');
     const rows=d.merchants||d||[];
-    if(!rows.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:24px">Aucun marchand</td></tr>';return}
-    tb.innerHTML=rows.map((m,i)=>`
-      <tr>
-        <td><strong>#${i+1}</strong></td>
-        <td>${m.name||m.email||'—'}</td>
-        <td style="color:#64748B;font-size:.83rem">${m.email||''}</td>
-        <td><span class="badge badge-purple">${m.deliveriesCount||0} livr.</span></td>
-        <td><span class="badge badge-green">Actif</span></td>
-      </tr>`).join('');
+    if(!rows.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:24px">No merchants</td></tr>';return}
+    tb.innerHTML=rows.map((m,i)=>`<tr>
+      <td><strong>#${i+1}</strong></td>
+      <td>${m.name||m.email||'—'}</td>
+      <td style="color:#64748B;font-size:.83rem">${m.email||''}</td>
+      <td><span class="badge badge-purple">${m.deliveriesCount||0} orders</span></td>
+      <td><span class="badge badge-green">Active</span></td>
+    </tr>`).join('');
   }catch(e){tb.innerHTML=`<tr><td colspan="5" style="text-align:center;color:#EF4444;padding:24px">${e.message}</td></tr>`}
 }
 
@@ -830,53 +927,50 @@ async function loadAdminDrivers(){
   try{
     const d=await apiFetch('/drivers');
     const rows=d.drivers||d||[];
-    if(!rows.length){tb.innerHTML='<tr><td colspan="3" style="text-align:center;color:#94A3B8;padding:24px">Aucun livreur</td></tr>';return}
-    tb.innerHTML=rows.map(dr=>`
-      <tr>
-        <td><div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem">${(dr.name||'?').charAt(0)}</div>${dr.name||dr.email||'—'}</div></td>
-        <td>${dr.vehicleType||'Moto'}</td>
-        <td><span class="badge badge-green">Actif</span></td>
-      </tr>`).join('');
+    if(!rows.length){tb.innerHTML='<tr><td colspan="3" style="text-align:center;color:#94A3B8;padding:24px">No drivers yet</td></tr>';return}
+    tb.innerHTML=rows.map(dr=>`<tr>
+      <td><div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem">${(dr.name||'?').charAt(0)}</div>${dr.name||dr.email||'—'}</div></td>
+      <td>${dr.vehicleType||'Car'}</td>
+      <td><span class="badge badge-green">● Active</span></td>
+    </tr>`).join('');
   }catch(e){tb.innerHTML=`<tr><td colspan="3" style="text-align:center;color:#EF4444;padding:24px">${e.message}</td></tr>`}
 }
 
 function buildActivityFeed(){
   const feed=document.getElementById('activityFeed');
   const items=[
-    {color:'#22C55E',text:'Nouvelle livraison créée par Marchand Dakar',time:'Il y a 2 min'},
-    {color:'#6C63FF',text:'Livreur Amadou a accepté la route #A4F2',time:'Il y a 8 min'},
-    {color:'#F97316',text:'Livraison #B3C1 en transit vers Plateau',time:'Il y a 15 min'},
-    {color:'#22C55E',text:'Livraison #F9A2 complétée avec succès',time:'Il y a 32 min'},
-    {color:'#3B82F6',text:'Nouveau marchand inscrit: Urban Store',time:'Il y a 1h'},
-    {color:'#EAB308',text:'Facture générée — 45 000 FCFA',time:'Il y a 2h'},
+    {color:'#22C55E',text:'New delivery created by GreenLeaf Organics',time:'2 min ago'},
+    {color:'#6C63FF',text:'Driver Marcus Johnson accepted order #A4F2',time:'8 min ago'},
+    {color:'#F97316',text:'Order #B3C1 in transit to 875 N Michigan Ave',time:'15 min ago'},
+    {color:'#22C55E',text:'Order #F9A2 delivered to Sarah Mitchell',time:'32 min ago'},
+    {color:'#3B82F6',text:'New merchant registered: Urban Essentials Chicago',time:'1 hr ago'},
+    {color:'#EAB308',text:'Invoice generated — $485.00 (INV-20240312)',time:'2 hr ago'},
+    {color:'#EF4444',text:'Failed delivery reported — wrong address on #C7D3',time:'3 hr ago'},
   ];
   feed.innerHTML=items.map(i=>`<div class="activity-item"><div class="activity-dot" style="background:${i.color}"></div><div class="activity-text">${i.text}</div><div class="activity-time">${i.time}</div></div>`).join('');
 }
 
-// ── ASSIGN DRIVER ─────────────────────────────────────────────
 async function openAssignModal(routeId){
   document.getElementById('assignRouteId').value=routeId;
   const sel=document.getElementById('assignDriverSelect');
-  sel.innerHTML='<option>Chargement…</option>';
+  sel.innerHTML='<option>Loading drivers…</option>';
   openModal('assignModal');
   try{
     const d=await apiFetch('/drivers');
     const rows=d.drivers||d||[];
-    sel.innerHTML=rows.map(dr=>`<option value="${dr.id||dr._id}">${dr.name||dr.email}</option>`).join('');
-  }catch(e){sel.innerHTML='<option>Erreur chargement</option>'}
+    sel.innerHTML=rows.length?rows.map(dr=>`<option value="${dr.id||dr._id}">${dr.name||dr.email} — ${dr.vehicleType||'Car'}</option>`).join(''):'<option>No drivers available</option>';
+  }catch(e){sel.innerHTML='<option>Error loading drivers</option>'}
 }
 async function submitAssign(){
   const routeId=document.getElementById('assignRouteId').value;
   const driverId=document.getElementById('assignDriverSelect').value;
   try{
     await apiFetch(`/routes/${routeId}/assign`,{method:'PATCH',body:JSON.stringify({driverId})});
-    showToast('Livreur assigné avec succès !','success');
-    closeModal('assignModal');
-    loadAdminRoutes();
+    showToast('Driver assigned successfully!','success');
+    closeModal('assignModal');loadAdminRoutes();
   }catch(e){showToast(e.message,'error')}
 }
 
-// ── ADD DRIVER ────────────────────────────────────────────────
 async function submitAddDriver(){
   const fn=document.getElementById('driverFirstName').value.trim();
   const ln=document.getElementById('driverLastName').value.trim();
@@ -885,58 +979,150 @@ async function submitAddDriver(){
   const tel=document.getElementById('driverTel').value.trim();
   const vehicle=document.getElementById('driverVehicle').value;
   const errEl=document.getElementById('driverFormError');
-  if(!fn||!ln||!email||!pass){errEl.textContent='Veuillez remplir tous les champs obligatoires';return}
+  if(!fn||!ln||!email||!pass){errEl.textContent='Please fill in all required fields';return}
   errEl.textContent='';
   try{
     await apiFetch('/auth/register',{method:'POST',body:JSON.stringify({name:`${fn} ${ln}`,email,password:pass,role:'driver',phone:tel,vehicleType:vehicle})});
-    showToast(`Livreur ${fn} ${ln} créé avec succès !`,'success');
+    showToast(`Driver ${fn} ${ln} created!`,'success');
     closeModal('addDriverModal');
-    // clear form
     ['driverFirstName','driverLastName','driverEmail','driverPass','driverTel'].forEach(id=>document.getElementById(id).value='');
-    loadAdminDrivers();
-    loadAdminStats();
+    loadAdminDrivers();loadAdminStats();
   }catch(e){errEl.textContent=e.message}
 }
 
-// ══════════════════════════════════════════════════════════════
-// MERCHANT
-// ══════════════════════════════════════════════════════════════
+// ══════════ MERCHANT ══════════
 async function initMerchant(user){
   const d=new Date();
-  document.getElementById('merchantDate').textContent=d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  document.getElementById('merchantName').textContent=user.name||user.email||'Marchand';
+  document.getElementById('merchantDate').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  document.getElementById('merchantName').textContent=user.name||user.email||'Merchant';
+  initStopBuilder();
   await Promise.all([loadMerchantRoutes(),loadMerchantDrivers()]);
 }
 
 function switchMerchantTab(name,el){
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById(`m-${name}`).classList.add('active');
+  const pane=document.getElementById(`m-${name}`);
+  if(pane)pane.classList.add('active');
   if(el)el.classList.add('active');
   if(name==='map')setTimeout(()=>initMerchantMap(),100);
   if(name==='invoices')loadInvoices();
   if(name==='analytics')loadAnalytics();
 }
 
+// ── STOP BUILDER
+function initStopBuilder(){
+  stopCount=0;
+  document.getElementById('stopsContainer').innerHTML='';
+  addStop();
+}
+
+function addStop(){
+  stopCount++;
+  const idx=stopCount;
+  const container=document.getElementById('stopsContainer');
+  const div=document.createElement('div');
+  div.className='stop-card';
+  div.id=`stop-${idx}`;
+  div.innerHTML=`
+    <div class="stop-card-header">
+      <span class="stop-number">📍 Stop ${idx}</span>
+      ${idx>1?`<button class="stop-remove" onclick="removeStop(${idx})">✕ Remove</button>`:'<span style="font-size:.72rem;color:#94A3B8">Required</span>'}
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Recipient Name</label><input type="text" id="stop-name-${idx}" placeholder="John Smith"></div>
+      <div class="form-group"><label>Recipient Phone</label><input type="text" id="stop-phone-${idx}" placeholder="(312) 555-0142"></div>
+    </div>
+    <div class="form-group"><label>Delivery Address</label><input type="text" id="stop-address-${idx}" placeholder="875 N Michigan Ave, Chicago, IL 60611"></div>
+    <div class="form-group"><label>Stop Notes</label><input type="text" id="stop-notes-${idx}" placeholder="Leave at front desk, call upon arrival…"></div>
+  `;
+  container.appendChild(div);
+  calcPrice();
+}
+
+function removeStop(idx){
+  const el=document.getElementById(`stop-${idx}`);
+  if(el)el.remove();
+  // Renumber visible stops
+  let n=1;
+  document.querySelectorAll('.stop-card').forEach(card=>{
+    card.querySelector('.stop-number').textContent=`📍 Stop ${n++}`;
+  });
+  calcPrice();
+}
+
 function calcPrice(){
-  const prices={standard:2000,express:5000,same_day:3500};
-  const type=document.getElementById('rType').value;
-  document.getElementById('rPrice').value=(prices[type]||2000).toLocaleString('fr-FR')+' FCFA';
+  const type=document.getElementById('rType')?.value||'standard';
+  const numStops=document.querySelectorAll('.stop-card').length||1;
+  const base={standard:5.99,same_day:8.99,express:12.99}[type]||5.99;
+  const perStop={standard:2.50,same_day:3.00,express:4.00}[type]||2.50;
+  const total=base+(numStops*perStop);
+  const priceEl=document.getElementById('rPriceDisplay');
+  const breakEl=document.getElementById('rPriceBreakdown');
+  if(priceEl)priceEl.textContent='$'+total.toFixed(2);
+  if(breakEl)breakEl.textContent=`Base $${base.toFixed(2)} + ${numStops} stop${numStops>1?'s':''} × $${perStop.toFixed(2)}`;
+  const legacyEl=document.getElementById('rPrice');
+  if(legacyEl)legacyEl.value='$'+total.toFixed(2);
+}
+
+function resetRouteForm(){
+  ['rPickupAddress','rPickupContact','rPickupPhone','rDesc','rInstructions'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=''});
+  document.getElementById('rPriority').value='normal';
+  document.getElementById('rType').value='standard';
+  document.getElementById('rSigRequired').checked=false;
+  document.getElementById('rPhotoRequired').checked=false;
+  initStopBuilder();
 }
 
 async function createRoute(){
-  const name=document.getElementById('rName').value.trim();
-  const phone=document.getElementById('rPhone').value.trim();
-  const address=document.getElementById('rAddress').value.trim();
+  const pickupAddress=document.getElementById('rPickupAddress').value.trim();
+  const pickupContact=document.getElementById('rPickupContact').value.trim();
+  const pickupPhone=document.getElementById('rPickupPhone').value.trim();
   const desc=document.getElementById('rDesc').value.trim();
+  const instructions=document.getElementById('rInstructions').value.trim();
+  const priority=document.getElementById('rPriority').value;
   const type=document.getElementById('rType').value;
-  const prices={standard:2000,express:5000,same_day:3500};
-  if(!name||!address){showToast('Veuillez remplir le nom et l\'adresse','error');return}
+  const sigRequired=document.getElementById('rSigRequired').checked;
+  const photoRequired=document.getElementById('rPhotoRequired').checked;
+
+  if(!pickupAddress){showToast('Please enter a pickup address','error');return}
+
+  // Collect stops
+  const stops=[];
+  document.querySelectorAll('.stop-card').forEach((card,i)=>{
+    const num=i+1;
+    const name=document.getElementById(`stop-name-${card.id.split('-')[1]}`)?.value.trim();
+    const phone=document.getElementById(`stop-phone-${card.id.split('-')[1]}`)?.value.trim();
+    const address=document.getElementById(`stop-address-${card.id.split('-')[1]}`)?.value.trim();
+    const notes=document.getElementById(`stop-notes-${card.id.split('-')[1]}`)?.value.trim();
+    if(address)stops.push({stopNumber:num,recipientName:name||'',recipientPhone:phone||'',address,notes:notes||'',status:'pending'});
+  });
+
+  if(!stops.length||!stops[0].address){showToast('Please add at least one delivery stop with an address','error');return}
+
+  const numStops=stops.length;
+  const base={standard:5.99,same_day:8.99,express:12.99}[type]||5.99;
+  const perStop={standard:2.50,same_day:3.00,express:4.00}[type]||2.50;
+  const price=base+(numStops*perStop);
+
+  const payload={
+    pickupAddress,pickupContact,pickupPhone,
+    packageDescription:desc,deliveryInstructions:instructions,
+    priority,deliveryType:type,
+    signatureRequired:sigRequired,photoRequired,
+    stops,price:parseFloat(price.toFixed(2)),
+    // Legacy single-stop fields for backend compat
+    recipientName:stops[0].recipientName,
+    recipientPhone:stops[0].recipientPhone,
+    deliveryAddress:stops[0].address,
+  };
+
   try{
-    await apiFetch('/routes',{method:'POST',body:JSON.stringify({recipientName:name,recipientPhone:phone,deliveryAddress:address,packageDescription:desc,deliveryType:type,price:prices[type]||2000})});
-    showToast('Livraison créée avec succès !','success');
-    ['rName','rPhone','rAddress','rDesc'].forEach(id=>document.getElementById(id).value='');
+    await apiFetch('/routes',{method:'POST',body:JSON.stringify(payload)});
+    showToast(`Delivery created! ${numStops} stop${numStops>1?'s':''} — ${fmtUSD(price)}`,'success');
+    resetRouteForm();
     loadMerchantRoutes();
+    switchMerchantTab('orders',document.querySelectorAll('.nav-item')[1]);
   }catch(e){showToast(e.message,'error')}
 }
 
@@ -944,10 +1130,15 @@ async function loadMerchantRoutes(){
   try{
     const d=await apiFetch('/routes');
     const rows=d.routes||d||[];
+
     // Dashboard recent
     const recentEl=document.getElementById('mRecentRoutes');
-    const recent=rows.slice(0,5);
-    recentEl.innerHTML=recent.length?recent.map(r=>`<tr><td>${r.recipientName||r.destination||'—'}</td><td>${fmtPrice(r.price)}</td><td>${statusBadge(r.status)}</td><td>${r.driver?.name||'<span style="color:#94A3B8">—</span>'}</td></tr>`).join(''):'<tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:24px">Aucune livraison</td></tr>';
+    recentEl.innerHTML=rows.slice(0,5).length?rows.slice(0,5).map(r=>`<tr>
+      <td>${r.recipientName||'—'}</td>
+      <td>${fmtUSD(r.price)}</td>
+      <td>${statusBadge(r.status)}</td>
+      <td>${r.driver?.name||'<span style="color:#94A3B8">—</span>'}</td>
+    </tr>`).join(''):'<tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:24px">No deliveries yet</td></tr>';
 
     // Stats
     const active=rows.filter(r=>['assigned','in_transit'].includes(r.status)).length;
@@ -957,51 +1148,64 @@ async function loadMerchantRoutes(){
     document.getElementById('mStatActive').textContent=active;
     document.getElementById('mStatDone').textContent=done;
     document.getElementById('mStatPending').textContent=pending;
-    document.getElementById('mStatCost').textContent=cost.toLocaleString('fr-FR');
+    document.getElementById('mStatCost').textContent=fmtUSD(cost);
 
-    // Routes table
+    // Routes table (New Delivery tab)
     const tb=document.getElementById('merchantRoutesTbody');
-    tb.innerHTML=rows.length?rows.map(r=>`<tr>
-      <td><code style="font-size:.78rem;background:#F1F5F9;padding:2px 6px;border-radius:4px">#${(r.id||r._id||'').toString().slice(-6)}</code></td>
-      <td>${r.recipientName||'—'}</td>
-      <td style="font-size:.82rem;color:#64748B">${r.deliveryAddress||'—'}</td>
-      <td>${fmtPrice(r.price)}</td>
-      <td>${statusBadge(r.status)}</td>
-      <td>${r.driver?.name||'<span style="color:#94A3B8">Non assigné</span>'}</td>
-      <td style="min-width:100px"><div class="progress-bar"><div class="progress-fill" style="width:${progressPct(r.status)}%"></div></div><div style="font-size:.72rem;color:#94A3B8;margin-top:4px">${progressPct(r.status)}%</div></td>
-    </tr>`).join(''):'<tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:32px">Aucune livraison pour le moment</td></tr>';
+    tb.innerHTML=rows.length?rows.map(r=>{
+      const stops=r.stops||[];
+      return`<tr>
+        <td><code style="font-size:.78rem;background:#F1F5F9;padding:2px 6px;border-radius:4px">#${(r.id||r._id||'').toString().slice(-6)}</code></td>
+        <td style="font-size:.82rem;color:#64748B">${r.pickupAddress||r.deliveryAddress||'—'}</td>
+        <td><span class="badge badge-purple">${stops.length||1} stop${stops.length!==1?'s':''}</span></td>
+        <td><strong>${fmtUSD(r.price)}</strong></td>
+        <td>${priorityBadge(r.priority)}</td>
+        <td>${statusBadge(r.status)}</td>
+        <td>${r.driver?.name||'<span style="color:#94A3B8">Unassigned</span>'}</td>
+        <td style="min-width:100px"><div class="progress-bar"><div class="progress-fill" style="width:${progressPct(r.status)}%"></div></div><div style="font-size:.72rem;color:#94A3B8;margin-top:4px">${progressPct(r.status)}%</div></td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="8" style="text-align:center;color:#94A3B8;padding:32px">No delivery orders yet</td></tr>';
 
     // Orders table
     const otb=document.getElementById('ordersTableBody');
-    otb.innerHTML=rows.length?rows.map(r=>`<tr>
-      <td><code style="font-size:.78rem;background:#F1F5F9;padding:2px 6px;border-radius:4px">#${(r.id||r._id||'').toString().slice(-6)}</code></td>
-      <td>${r.recipientName||'—'}</td>
-      <td style="font-size:.82rem;color:#64748B">${r.deliveryAddress||'—'}</td>
-      <td>${fmtPrice(r.price)}</td>
-      <td>${statusBadge(r.status)}</td>
-      <td>${r.driver?.name||'<span style="color:#94A3B8">Non assigné</span>'}</td>
-      <td style="font-size:.8rem;color:#64748B">${fmtDate(r.createdAt)}</td>
-    </tr>`).join(''):'<tr><td colspan="7" style="text-align:center;color:#94A3B8;padding:32px">Aucune commande</td></tr>';
+    otb.innerHTML=rows.length?rows.map(r=>{
+      const stops=r.stops||[];
+      return`<tr>
+        <td><code style="font-size:.78rem;background:#F1F5F9;padding:2px 6px;border-radius:4px">#${(r.id||r._id||'').toString().slice(-6)}</code></td>
+        <td>${r.recipientName||'—'}</td>
+        <td style="font-size:.82rem;color:#64748B">${r.deliveryAddress||'—'}</td>
+        <td>${fmtUSD(r.price)}</td>
+        <td><span class="badge badge-purple">${stops.length||1}</span></td>
+        <td>${statusBadge(r.status)}</td>
+        <td>${r.driver?.name||'<span style="color:#94A3B8">—</span>'}</td>
+        <td style="font-size:.8rem;color:#64748B">${fmtDate(r.createdAt)}</td>
+      </tr>`;
+    }).join(''):'<tr><td colspan="8" style="text-align:center;color:#94A3B8;padding:32px">No orders yet</td></tr>';
 
-    // Map routes
+    // Map routes list
     const mapEl=document.getElementById('mapRoutesList');
     const active2=rows.filter(r=>['assigned','in_transit'].includes(r.status));
-    mapEl.innerHTML=active2.length?active2.map(r=>`<tr><td>${r.recipientName||'—'}</td><td>${r.driver?.name||'—'}</td><td>${r.status==='in_transit'?'~25 min':'En attente'}</td><td>${statusBadge(r.status)}</td></tr>`).join(''):'<tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:24px">Aucune route active</td></tr>';
+    mapEl.innerHTML=active2.length?active2.map(r=>`<tr>
+      <td>${r.recipientName||'—'}</td>
+      <td>${r.driver?.name||'—'}</td>
+      <td>${r.status==='in_transit'?'~25 min':'Waiting'}</td>
+      <td>${statusBadge(r.status)}</td>
+    </tr>`).join(''):'<tr><td colspan="4" style="text-align:center;color:#94A3B8;padding:24px">No active routes</td></tr>';
 
-    // Activity feed
     buildMerchantActivity(rows);
   }catch(e){console.error(e)}
 }
 
 function buildMerchantActivity(routes){
   const feed=document.getElementById('mActivityFeed');
-  if(!routes.length){feed.innerHTML='<div class="activity-item"><div class="activity-dot" style="background:#94A3B8"></div><div class="activity-text">Aucune activité</div></div>';return}
-  const items=routes.slice(0,6).map(r=>{
-    const colors={pending:'#F97316',assigned:'#3B82F6',in_transit:'#6C63FF',delivered:'#22C55E',cancelled:'#EF4444'};
-    const labels={pending:'créée',assigned:'assignée',in_transit:'en transit',delivered:'livrée',cancelled:'annulée'};
-    return{color:colors[r.status]||'#94A3B8',text:`Livraison pour ${r.recipientName||'?'} ${labels[r.status]||r.status}`,time:fmtDate(r.updatedAt||r.createdAt)};
-  });
-  feed.innerHTML=items.map(i=>`<div class="activity-item"><div class="activity-dot" style="background:${i.color}"></div><div class="activity-text">${i.text}</div><div class="activity-time">${i.time}</div></div>`).join('');
+  if(!routes.length){feed.innerHTML='<div class="activity-item"><div class="activity-dot" style="background:#94A3B8"></div><div class="activity-text">No activity yet</div></div>';return}
+  const colors={pending:'#F97316',assigned:'#3B82F6',in_transit:'#6C63FF',delivered:'#22C55E',cancelled:'#EF4444'};
+  const labels={pending:'created',assigned:'assigned to driver',in_transit:'in transit',delivered:'delivered ✓',cancelled:'cancelled'};
+  feed.innerHTML=routes.slice(0,6).map(r=>`<div class="activity-item">
+    <div class="activity-dot" style="background:${colors[r.status]||'#94A3B8'}"></div>
+    <div class="activity-text">Order for ${r.recipientName||'recipient'} ${labels[r.status]||r.status}</div>
+    <div class="activity-time">${fmtDate(r.updatedAt||r.createdAt)}</div>
+  </div>`).join('');
 }
 
 async function loadMerchantDrivers(){
@@ -1012,44 +1216,50 @@ async function loadMerchantDrivers(){
     tb.innerHTML=rows.length?rows.map(dr=>`<tr>
       <td><div style="display:flex;align-items:center;gap:10px"><div style="width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem">${(dr.name||'?').charAt(0)}</div>${dr.name||'—'}</div></td>
       <td style="color:#64748B;font-size:.83rem">${dr.email||'—'}</td>
-      <td>${dr.vehicleType||'Moto'}</td>
-      <td><span class="badge badge-green">● Disponible</span></td>
+      <td>${dr.vehicleType||'Car'}</td>
+      <td><span class="badge badge-green">● Available</span></td>
       <td>${dr.assignedRoutes||0}</td>
-    </tr>`).join(''):'<tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:32px">Aucun livreur</td></tr>';
+    </tr>`).join(''):'<tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:32px">No drivers found</td></tr>';
   }catch(e){tb.innerHTML=`<tr><td colspan="5" style="text-align:center;color:#EF4444;padding:24px">${e.message}</td></tr>`}
 }
 
 function initMerchantMap(){
   if(mapInstances['merchantMap'])return;
   const m=initMap('merchantMap');
-  // Add some demo markers for Dakar
-  const markers=[{lat:14.6928,lng:-17.4467,label:'Plateau'},{lat:14.7260,lng:-17.4520,label:'Médina'},{lat:14.6781,lng:-17.4628,label:'Dakar'}];
+  // Demo Chicago markers
+  const markers=[
+    {lat:41.8858,lng:-87.6181,label:'875 N Michigan Ave'},
+    {lat:41.8827,lng:-87.6233,label:'200 E Randolph St'},
+    {lat:41.8796,lng:-87.6237,label:'55 E Monroe St'}
+  ];
   markers.forEach(mk=>{
-    L.circleMarker([mk.lat,mk.lng],{radius:8,fillColor:'#6C63FF',color:'#fff',weight:2,fillOpacity:.9}).addTo(m).bindPopup(`📦 Livraison active — ${mk.label}`);
+    L.circleMarker([mk.lat,mk.lng],{radius:8,fillColor:'#6C63FF',color:'#fff',weight:2,fillOpacity:.9}).addTo(m).bindPopup(`📦 Active delivery — ${mk.label}`);
   });
+  L.marker([41.8814,-87.6278],{title:'Pickup'}).addTo(m).bindPopup('📍 Pickup: 456 W Madison St');
 }
 
 async function loadInvoices(){
   const tb=document.getElementById('invoicesTbody');
-  tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:24px">Chargement…</td></tr>';
+  tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:#94A3B8;padding:24px">Loading…</td></tr>';
   try{
     const d=await apiFetch('/billing/my-invoices');
     const rows=d.invoices||d||[];
-    if(!rows.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:#94A3B8;padding:32px">Aucune facture. Cliquez "Générer une facture" pour créer.</td></tr>';return}
+    if(!rows.length){tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:#94A3B8;padding:32px">No invoices yet. Click "Generate Invoice" to create one.</td></tr>';return}
     tb.innerHTML=rows.map(inv=>`<tr>
       <td><code style="font-size:.78rem;background:#F1F5F9;padding:2px 6px;border-radius:4px">INV-${(inv.id||inv._id||'').toString().slice(-8).toUpperCase()}</code></td>
-      <td><strong>${fmtPrice(inv.amount||inv.totalAmount)}</strong></td>
+      <td><strong>${fmtUSD(inv.amount||inv.totalAmount)}</strong></td>
+      <td><span class="badge badge-purple">${inv.deliveriesCount||0}</span></td>
       <td><span class="badge ${inv.status==='paid'?'badge-green':inv.status==='pending'?'badge-orange':'badge-gray'}">${inv.status||'pending'}</span></td>
       <td>${fmtDate(inv.createdAt)}</td>
-      <td><button class="btn btn-sm btn-outline" onclick="showToast('Téléchargement PDF…','success')">📄 PDF</button></td>
+      <td><button class="btn btn-sm btn-outline" onclick="showToast('Downloading PDF…','success')">📄 PDF</button></td>
     </tr>`).join('');
-  }catch(e){tb.innerHTML=`<tr><td colspan="5" style="text-align:center;color:#EF4444;padding:24px">${e.message}</td></tr>`}
+  }catch(e){tb.innerHTML=`<tr><td colspan="6" style="text-align:center;color:#EF4444;padding:24px">${e.message}</td></tr>`}
 }
 
 async function generateInvoice(){
   try{
     await apiFetch('/billing/generate',{method:'POST'});
-    showToast('Facture générée avec succès !','success');
+    showToast('Invoice generated!','success');
     loadInvoices();
   }catch(e){showToast(e.message,'error')}
 }
@@ -1064,22 +1274,20 @@ async function loadAnalytics(){
     const express=rows.filter(r=>r.deliveryType==='express').length;
     document.getElementById('anExpress').textContent=express;
     const spend=rows.reduce((a,r)=>a+(Number(r.price)||0),0);
-    document.getElementById('anSpend').textContent=spend.toLocaleString('fr-FR')+' F';
+    document.getElementById('anSpend').textContent=fmtUSD(spend);
 
     const statuses=['pending','assigned','in_transit','delivered','cancelled'];
-    const labels={pending:'En attente',assigned:'Assignée',in_transit:'En transit',delivered:'Livrée',cancelled:'Annulée'};
-    const colors={pending:'#F97316',assigned:'#3B82F6',in_transit:'#6C63FF',delivered:'#22C55E',cancelled:'#EF4444'};
-    const sDiv=document.getElementById('statusBreakdown');
-    sDiv.innerHTML=statuses.map(s=>{
+    const sLabels={pending:'Pending',assigned:'Assigned',in_transit:'In Transit',delivered:'Delivered',cancelled:'Cancelled'};
+    const sColors={pending:'#F97316',assigned:'#3B82F6',in_transit:'#6C63FF',delivered:'#22C55E',cancelled:'#EF4444'};
+    document.getElementById('statusBreakdown').innerHTML=statuses.map(s=>{
       const cnt=rows.filter(r=>r.status===s).length;
       const pct=rows.length?Math.round(cnt/rows.length*100):0;
-      return`<div style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:5px"><span style="color:#334155;font-weight:500">${labels[s]}</span><span style="color:#64748B">${cnt} (${pct}%)</span></div><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${colors[s]}"></div></div></div>`;
+      return`<div style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:5px"><span style="color:#334155;font-weight:500">${sLabels[s]}</span><span style="color:#64748B">${cnt} (${pct}%)</span></div><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${sColors[s]}"></div></div></div>`;
     }).join('');
 
-    const types=['standard','express','same_day'];
-    const tLabels={standard:'Standard',express:'Express',same_day:'Même jour'};
-    const tDiv=document.getElementById('typeBreakdown');
-    tDiv.innerHTML=types.map(t=>{
+    const types=['standard','same_day','express'];
+    const tLabels={standard:'Standard',same_day:'Same Day',express:'Express'};
+    document.getElementById('typeBreakdown').innerHTML=types.map(t=>{
       const cnt=rows.filter(r=>r.deliveryType===t).length;
       const pct=rows.length?Math.round(cnt/rows.length*100):0;
       return`<div style="margin-bottom:14px"><div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:5px"><span style="color:#334155;font-weight:500">${tLabels[t]}</span><span style="color:#64748B">${cnt} (${pct}%)</span></div><div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div></div>`;
@@ -1087,9 +1295,7 @@ async function loadAnalytics(){
   }catch(e){console.error(e)}
 }
 
-// ══════════════════════════════════════════════════════════════
-// DRIVER
-// ══════════════════════════════════════════════════════════════
+// ══════════ DRIVER ══════════
 async function initDriver(){
   await Promise.all([loadDriverEarnings(),loadDriverRoutes()]);
   setTimeout(()=>initDriverMap(),100);
@@ -1098,14 +1304,14 @@ async function initDriver(){
 async function loadDriverEarnings(){
   try{
     const d=await apiFetch('/drivers/earnings');
-    document.getElementById('driverEarningsToday').textContent=fmtPrice(d.today||d.daily||0);
-    document.getElementById('driverEarningsMonth').textContent=fmtPrice(d.monthly||d.month||0);
+    document.getElementById('driverEarningsToday').textContent=fmtUSD(d.today||d.daily||0);
+    document.getElementById('driverEarningsMonth').textContent=fmtUSD(d.monthly||d.month||0);
     document.getElementById('driverCompleted').textContent=d.completed||d.completedRoutes||0;
     document.getElementById('driverPending').textContent=d.pending||d.pendingRoutes||0;
   }catch(e){
-    // Show demo data if API fails
-    document.getElementById('driverEarningsToday').textContent='12 500 FCFA';
-    document.getElementById('driverEarningsMonth').textContent='187 000 FCFA';
+    // Demo data
+    document.getElementById('driverEarningsToday').textContent='$84.50';
+    document.getElementById('driverEarningsMonth').textContent='$1,247.00';
     document.getElementById('driverCompleted').textContent='8';
     document.getElementById('driverPending').textContent='2';
   }
@@ -1115,148 +1321,313 @@ async function loadDriverRoutes(){
   const el=document.getElementById('driverRoutesList');
   try{
     const d=await apiFetch('/drivers/my-routes');
-    const available=d.routes||d||[];
-    if(!available.length){
-      el.innerHTML=`<div style="text-align:center;padding:40px;color:#94A3B8">
-        <div style="font-size:3rem;margin-bottom:12px">🎉</div>
-        <div style="font-weight:600;color:#475569">Aucune route pour le moment</div>
-        <div style="font-size:.85rem;margin-top:6px">Nouvelles routes bientôt disponibles</div>
-      </div>`;
+    const routes=d.routes||d||[];
+    if(!routes.length){
+      el.innerHTML=renderDemoDriverRoutes();
       return;
     }
-    el.innerHTML=available.map((r,i)=>`
-      <div class="route-card ${i===0?'urgent':''}">
-        <div class="route-card-header">
-          <div><div class="route-card-title">${r.recipientName||r.destination||'Livraison'}</div><div class="route-card-sub">${r.deliveryAddress||'Adresse non spécifiée'}</div></div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
-            ${i===0?'<span class="badge badge-orange">🔥 Urgent</span>':''}
-            ${statusBadge(r.status)}
-          </div>
-        </div>
-        <div class="route-meta">
-          <div class="route-meta-item"><div class="dot"></div>${fmtPrice(r.price)}</div>
-          <div class="route-meta-item"><div class="dot"></div>${r.deliveryType||'Standard'}</div>
-          <div class="route-meta-item"><div class="dot"></div>${r.packageDescription||'Colis'}</div>
-        </div>
-        ${r.status==='assigned'||r.status==='in_transit'?
-          `<button class="btn-accept ${r.status==='in_transit'?'btn-accepted':''}" ${r.status==='in_transit'?'disabled':''} onclick="acceptRoute('${r.id||r._id}',this)">
-            ${r.status==='in_transit'?'✅ En cours de livraison':'🚴 Accepter la route'}
-          </button>`:
-          `<button class="btn-accept" onclick="acceptRoute('${r.id||r._id}',this)">🚴 Accepter la route</button>`
-        }
-      </div>`).join('');
+    el.innerHTML=routes.map(r=>renderDriverCard(r)).join('');
   }catch(e){
-    // Demo routes
-    el.innerHTML=`
-      <div class="route-card urgent">
-        <div class="route-card-header">
-          <div><div class="route-card-title">Mamadou Diop</div><div class="route-card-sub">Plateau, Rue Carnot, Dakar</div></div>
-          <div><span class="badge badge-orange">🔥 Urgent</span></div>
-        </div>
-        <div class="route-meta">
-          <div class="route-meta-item"><div class="dot"></div>5 000 FCFA</div>
-          <div class="route-meta-item"><div class="dot"></div>Express</div>
-          <div class="route-meta-item"><div class="dot"></div>Documents</div>
-        </div>
-        <button class="btn-accept" onclick="this.textContent='✅ Route acceptée !';this.classList.add('btn-accepted');this.disabled=true;showToast('Route acceptée !','success')">🚴 Accepter la route</button>
-      </div>
-      <div class="route-card">
-        <div class="route-card-header">
-          <div><div class="route-card-title">Fatou Ndiaye</div><div class="route-card-sub">Médina, Dakar</div></div>
-          <div><span class="badge badge-blue">Standard</span></div>
-        </div>
-        <div class="route-meta">
-          <div class="route-meta-item"><div class="dot"></div>2 000 FCFA</div>
-          <div class="route-meta-item"><div class="dot"></div>Standard</div>
-          <div class="route-meta-item"><div class="dot"></div>Colis fragile</div>
-        </div>
-        <button class="btn-accept" onclick="this.textContent='✅ Route acceptée !';this.classList.add('btn-accepted');this.disabled=true;showToast('Route acceptée !','success')">🚴 Accepter la route</button>
-      </div>`;
+    el.innerHTML=renderDemoDriverRoutes();
   }
 }
 
-async function acceptRoute(id,btn){
-  try{
-    await apiFetch(`/routes/${id}/assign`,{method:'PATCH',body:JSON.stringify({status:'in_transit'})});
-    btn.textContent='✅ Route acceptée !';
-    btn.classList.add('btn-accepted');
-    btn.disabled=true;
-    showToast('Route acceptée !','success');
-  }catch(e){showToast(e.message,'error')}
+function getDriverState(routeId){
+  return _driverState[routeId]||{phase:'not_accepted',currentStopIdx:0};
+}
+function setDriverState(routeId,update){
+  _driverState[routeId]={...(getDriverState(routeId)),...update};
+  // Re-render
+  const el=document.getElementById(`driver-card-${routeId}`);
+  if(el){
+    // Find the route data cached on the element
+    const routeData=JSON.parse(el.dataset.route||'{}');
+    el.outerHTML=renderDriverCard(routeData);
+  }
+}
+
+function renderDriverCard(r){
+  const id=r.id||r._id||r.demoId||'demo';
+  const state=getDriverState(id);
+  const {phase,currentStopIdx}=state;
+  const stops=r.stops||[{recipientName:r.recipientName,address:r.deliveryAddress,phone:r.recipientPhone,notes:'',status:'pending'}];
+  const isPriority=(r.priority==='urgent'||r.priority==='high');
+  const routeJson=JSON.stringify(r).replace(/"/g,'&quot;');
+
+  let workflowHtml='';
+
+  if(phase==='not_accepted'){
+    workflowHtml=`
+      <div class="workflow-section">
+        <div class="workflow-title">Actions</div>
+        <button class="wf-btn wf-btn-primary" onclick="driverAccept('${id}')">🚗 Accept Delivery</button>
+      </div>`;
+  } else if(phase==='accepted'){
+    workflowHtml=`
+      <div class="pickup-info">
+        <div class="pickup-label">Pickup Location</div>
+        <strong>${r.pickupAddress||'Pickup address not specified'}</strong><br>
+        <span style="color:#64748B">Contact: ${r.pickupContact||'—'} ${r.pickupPhone?'· '+r.pickupPhone:''}</span>
+      </div>
+      <div class="workflow-section">
+        <div class="workflow-title">Step 1 of ${stops.length+2}</div>
+        <button class="wf-btn wf-btn-maps" onclick="openInMaps('${(r.pickupAddress||'').replace(/'/g,"\\'")}')">🗺️ Navigate to Pickup</button>
+        <button class="wf-btn wf-btn-primary" onclick="driverArrivedPickup('${id}')">📍 I'm at Pickup Location</button>
+      </div>`;
+  } else if(phase==='at_pickup'){
+    workflowHtml=`
+      <div class="pickup-info">
+        <div class="pickup-label">📍 You're at Pickup</div>
+        <strong>${r.pickupAddress||'Pickup address'}</strong><br>
+        <span style="color:#64748B">${r.packageDescription||'Package'} ${r.signatureRequired?'· Signature req.':''} ${r.photoRequired?'· Photo req.':''}</span>
+      </div>
+      <div class="workflow-section">
+        <div class="workflow-title">Step 2 of ${stops.length+2} — Confirm Pickup</div>
+        ${r.photoRequired?`<div class="proof-placeholder" onclick="showToast('Camera opened','success')">📷 Take Pickup Photo</div>`:''}
+        <button class="wf-btn wf-btn-green" onclick="driverConfirmPickup('${id}')">✅ Confirm Items Picked Up</button>
+      </div>`;
+  } else if(phase==='in_transit'||phase.startsWith('at_stop')){
+    const curIdx=currentStopIdx;
+    const curStop=stops[curIdx];
+    const stepNum=curIdx+3;
+
+    const stopsListHtml=stops.map((s,i)=>{
+      const done=i<curIdx||(phase.startsWith('at_stop')&&i<curIdx)||(s.status==='delivered');
+      const active=i===curIdx;
+      const cls=done?'stop-done':active?'stop-active':'stop-pending';
+      const dotCls=done?'stop-dot-done':active?'stop-dot-active':'stop-dot-pending';
+      const icon=done?'✓':active?'●':'○';
+      return`<div class="driver-stop-item ${cls}">
+        <div class="stop-dot ${dotCls}">${icon}</div>
+        <div>
+          <strong>${s.recipientName||`Stop ${i+1}`}</strong><br>
+          <span>${s.address||'—'}</span>
+          ${s.notes?`<br><span style="font-style:italic;font-size:.78rem">${s.notes}</span>`:''}
+        </div>
+      </div>`;
+    }).join('');
+
+    if(phase==='in_transit'){
+      workflowHtml=`
+        <div class="driver-stops-list">${stopsListHtml}</div>
+        <div class="workflow-section">
+          <div class="workflow-title">Step ${stepNum} of ${stops.length+2} — Heading to Stop ${curIdx+1}</div>
+          <button class="wf-btn wf-btn-maps" onclick="openInMaps('${(curStop?.address||'').replace(/'/g,"\\'")}')">🗺️ Navigate to Stop ${curIdx+1}</button>
+          <button class="wf-btn wf-btn-primary" onclick="driverArrivedStop('${id}',${curIdx})">📍 Arrived at Stop ${curIdx+1}</button>
+        </div>`;
+    } else {
+      // phase === 'at_stop_X'
+      workflowHtml=`
+        <div class="driver-stops-list">${stopsListHtml}</div>
+        <div class="pickup-info" style="background:#EEF0FF;border-color:#A5B4FC">
+          <div class="pickup-label" style="color:#4338CA">📍 You're at Stop ${curIdx+1}</div>
+          <strong>${curStop?.recipientName||'Recipient'}</strong> · ${curStop?.phone||''}<br>
+          <span style="color:#64748B">${curStop?.address||''}</span>
+          ${curStop?.notes?`<br><em style="font-size:.78rem">${curStop.notes}</em>`:''}
+        </div>
+        <div class="workflow-section">
+          <div class="workflow-title">Step ${stepNum} of ${stops.length+2} — Confirm Delivery</div>
+          ${r.signatureRequired?`<div class="proof-placeholder" onclick="showToast('Signature pad opened','success')">✍️ Capture Signature</div>`:''}
+          ${r.photoRequired?`<div class="proof-placeholder" onclick="showToast('Camera opened','success')">📷 Take Delivery Photo</div>`:''}
+          <button class="wf-btn wf-btn-green" onclick="driverConfirmDelivered('${id}',${curIdx})">✅ Confirm Delivered at Stop ${curIdx+1}</button>
+          <button class="wf-btn wf-btn-red" onclick="openFailedModal('${id}',${curIdx})">❌ Failed Delivery</button>
+        </div>`;
+    }
+  } else if(phase==='completed'){
+    workflowHtml=`<div style="text-align:center;padding:16px;background:#F0FDF4;border-radius:10px;margin-top:12px">
+      <div style="font-size:2rem">🎉</div>
+      <div style="font-weight:700;color:#16A34A;margin-top:6px">All Stops Completed!</div>
+      <div style="font-size:.82rem;color:#64748B;margin-top:4px">Great job! Earnings added to your account.</div>
+    </div>`;
+  }
+
+  return`<div class="route-card ${isPriority?'urgent':''}" id="driver-card-${id}" data-route="${routeJson}">
+    <div class="route-card-header">
+      <div>
+        <div class="route-card-title">${r.merchant?.name||r.merchantId||'Delivery Order'}</div>
+        <div class="route-card-sub">${stops.length} stop${stops.length!==1?'s':''} · ${r.deliveryType||'Standard'}</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+        ${isPriority?`<span class="badge badge-orange">🔥 ${r.priority==='urgent'?'Urgent':'High Priority'}</span>`:''}
+        ${statusBadge(r.status)}
+      </div>
+    </div>
+    <div class="route-meta">
+      <div class="route-meta-item"><div class="dot"></div><strong>${fmtUSD(r.price)}</strong></div>
+      <div class="route-meta-item"><div class="dot"></div>${r.packageDescription||'Package'}</div>
+      ${r.signatureRequired?'<div class="route-meta-item"><div class="dot"></div>Sig. Required</div>':''}
+      ${r.photoRequired?'<div class="route-meta-item"><div class="dot"></div>Photo Required</div>':''}
+    </div>
+    ${workflowHtml}
+  </div>`;
+}
+
+function driverAccept(id){
+  apiFetch(`/routes/${id}/accept`,{method:'PATCH'}).catch(()=>{});
+  setDriverState(id,{phase:'accepted'});
+  showToast('Delivery accepted! Navigate to pickup.','success');
+  refreshDriverCard(id);
+}
+function driverArrivedPickup(id){setDriverState(id,{phase:'at_pickup'});refreshDriverCard(id);showToast('Marked as arrived at pickup','success')}
+function driverConfirmPickup(id){
+  apiFetch(`/routes/${id}/status`,{method:'PATCH',body:JSON.stringify({status:'in_transit'})}).catch(()=>{});
+  setDriverState(id,{phase:'in_transit',currentStopIdx:0});refreshDriverCard(id);showToast('Pickup confirmed! Head to Stop 1','success');
+}
+function driverArrivedStop(id,stopIdx){setDriverState(id,{phase:`at_stop_${stopIdx}`,currentStopIdx:stopIdx});refreshDriverCard(id);showToast(`Arrived at Stop ${stopIdx+1}`,'success')}
+function driverConfirmDelivered(id,stopIdx){
+  const el=document.getElementById(`driver-card-${id}`);
+  const route=el?JSON.parse(el.dataset.route.replace(/&quot;/g,'"')||'{}'):{};
+  const stops=route.stops||[{}];
+  const nextIdx=stopIdx+1;
+  if(nextIdx>=stops.length){
+    apiFetch(`/routes/${id}/status`,{method:'PATCH',body:JSON.stringify({status:'delivered'})}).catch(()=>{});
+    setDriverState(id,{phase:'completed'});showToast('All stops delivered! Great work! 🎉','success');
+  } else {
+    setDriverState(id,{phase:'in_transit',currentStopIdx:nextIdx});showToast(`Stop ${stopIdx+1} delivered! Heading to Stop ${nextIdx+1}`,'success');
+  }
+  refreshDriverCard(id);
+}
+function openFailedModal(routeId,stopIdx){
+  document.getElementById('failRouteId').value=routeId;
+  document.getElementById('failStopIdx').value=stopIdx;
+  openModal('failedModal');
+}
+function submitFailedDelivery(){
+  const id=document.getElementById('failRouteId').value;
+  const stopIdx=parseInt(document.getElementById('failStopIdx').value);
+  const reason=document.getElementById('failReason').value;
+  const notes=document.getElementById('failNotes').value;
+  apiFetch(`/routes/${id}/status`,{method:'PATCH',body:JSON.stringify({status:'cancelled',reason,notes})}).catch(()=>{});
+  closeModal('failedModal');
+  setDriverState(id,{phase:'completed'});
+  refreshDriverCard(id);
+  showToast(`Failed delivery reported: ${reason}`,'error');
+}
+function openInMaps(address){
+  if(!address){showToast('No address available','error');return}
+  const enc=encodeURIComponent(address);
+  window.open(`https://www.google.com/maps/search/?api=1&query=${enc}`,'_blank');
+}
+function refreshDriverCard(id){
+  const el=document.getElementById(`driver-card-${id}`);
+  if(!el)return;
+  const route=JSON.parse(el.dataset.route.replace(/&quot;/g,'"')||'{}');
+  const state=getDriverState(id);
+  const newHtml=renderDriverCard({...route,_statePhase:state.phase});
+  el.outerHTML=newHtml;
+}
+
+function renderDemoDriverRoutes(){
+  const demoRoutes=[
+    {demoId:'d1',merchant:{name:'GreenLeaf Organics'},pickupAddress:'456 W Madison St, Chicago, IL 60661',pickupContact:'Sarah Chen',pickupPhone:'(312) 555-0180',packageDescription:'Organic grocery box',priority:'urgent',deliveryType:'Express',price:18.49,signatureRequired:true,photoRequired:false,status:'assigned',
+      stops:[{recipientName:'James Mitchell',phone:'(312) 555-0142',address:'875 N Michigan Ave, Chicago, IL 60611',notes:'Doorman building — call ahead'},{recipientName:'Priya Patel',phone:'(312) 555-0267',address:'200 E Randolph St, Chicago, IL 60601',notes:'Leave at front desk'}]},
+    {demoId:'d2',merchant:{name:'Urban Essentials'},pickupAddress:'101 N Wacker Dr, Chicago, IL 60606',pickupContact:'Mike Torres',pickupPhone:'(312) 555-0220',packageDescription:'Office supplies',priority:'normal',deliveryType:'Standard',price:11.49,signatureRequired:false,photoRequired:true,status:'assigned',
+      stops:[{recipientName:'Amanda Foster',phone:'(312) 555-0381',address:'55 E Monroe St, Suite 400, Chicago, IL 60603',notes:'Suite 400, 4th floor'}]}
+  ];
+  return demoRoutes.map(r=>renderDriverCard(r)).join('');
 }
 
 function initDriverMap(){
   if(mapInstances['driverMap'])return;
   navigator.geolocation?.getCurrentPosition(pos=>{
     const m=initMap('driverMap',pos.coords.latitude,pos.coords.longitude,14);
-    L.marker([pos.coords.latitude,pos.coords.longitude]).addTo(m).bindPopup('📍 Ma position').openPopup();
+    L.marker([pos.coords.latitude,pos.coords.longitude]).addTo(m).bindPopup('📍 My Location').openPopup();
   },()=>{
-    const m=initMap('driverMap');
-    L.marker([14.6928,-17.4467]).addTo(m).bindPopup('📍 Position (Dakar)').openPopup();
+    const m=initMap('driverMap',41.8781,-87.6298,13);
+    L.marker([41.8781,-87.6298]).addTo(m).bindPopup('📍 Chicago, IL').openPopup();
   });
 }
 
-// ══════════════════════════════════════════════════════════════
-// CUSTOMER TRACKING
-// ══════════════════════════════════════════════════════════════
+// ══════════ CUSTOMER TRACKING ══════════
 async function trackDelivery(){
   const token=document.getElementById('trackingToken').value.trim();
-  if(!token){showToast('Veuillez entrer un code de suivi','error');return}
+  if(!token){showToast('Please enter a tracking code','error');return}
   document.getElementById('trackingResult').style.display='none';
   try{
     const d=await apiFetch(`/routes/public/${token}`);
-    const r=d.route||d;
-    document.getElementById('trackingResult').style.display='block';
-
-    // ETA
-    const etaMap={pending:60,assigned:45,in_transit:20,delivered:0};
-    document.getElementById('etaMins').textContent=etaMap[r.status]||'—';
-    document.getElementById('deliveryAddress').textContent=`📍 ${r.deliveryAddress||'Adresse non disponible'}`;
-
-    // Driver info
-    const dName=r.driver?.name||'En attente d\'un livreur';
-    document.getElementById('trackDriverName').textContent=dName;
-    document.getElementById('driverInitials').textContent=dName.charAt(0);
-    document.getElementById('trackDriverVehicle').textContent=(r.driver?.vehicleType||'Moto')+' — '+(r.status==='in_transit'?'EN ROUTE':'EN ATTENTE');
-
-    // Details
-    document.getElementById('trackingDetails').innerHTML=`
-      <div style="display:grid;gap:8px">
-        <div><strong>Destinataire:</strong> ${r.recipientName||'—'}</div>
-        <div><strong>Téléphone:</strong> ${r.recipientPhone||'—'}</div>
-        <div><strong>Colis:</strong> ${r.packageDescription||'—'}</div>
-        <div><strong>Type:</strong> ${r.deliveryType||'Standard'}</div>
-        <div><strong>Prix:</strong> ${fmtPrice(r.price)}</div>
-      </div>`;
-
-    // Timeline
-    const steps=[
-      {key:'pending',label:'Commande reçue',sub:'Votre colis est enregistré'},
-      {key:'assigned',label:'Livreur assigné',sub:'Un livreur a été assigné'},
-      {key:'in_transit',label:'En route',sub:'Votre colis est en chemin'},
-      {key:'delivered',label:'Livré',sub:'Livraison complétée'},
-    ];
-    const order=['pending','assigned','in_transit','delivered'];
-    const currentIdx=order.indexOf(r.status);
-    document.getElementById('statusTimeline').innerHTML=steps.map((step,i)=>{
-      const isDone=i<currentIdx;const isActive=i===currentIdx;
-      const cls=isDone?'done':isActive?'active':'pending';
-      const icon=isDone?'✓':isActive?'●':'○';
-      return`<div class="timeline-item"><div class="timeline-dot ${cls}">${icon}</div><div class="timeline-info"><h4>${step.label}</h4><p>${step.sub}</p></div></div>`;
-    }).join('');
-
-    // Map
-    setTimeout(()=>{
-      if(mapInstances['trackingMap'])return;
-      const m=initMap('trackingMap');
-      L.marker([14.6928,-17.4467]).addTo(m).bindPopup('📦 Livraison').openPopup();
-    },100);
-  }catch(e){showToast('Code invalide ou livraison introuvable','error')}
+    renderTrackingResult(d.route||d,token);
+  }catch(e){
+    // Demo fallback
+    renderTrackingResult({
+      status:'in_transit',
+      recipientName:'Sarah Mitchell',
+      recipientPhone:'(312) 555-0199',
+      deliveryAddress:'875 N Michigan Ave, Chicago, IL 60611',
+      packageDescription:'Organic grocery box',
+      deliveryType:'Express',
+      price:18.49,
+      signatureRequired:true,
+      driver:{name:'Marcus Johnson',vehicleType:'Van'},
+      stops:[
+        {recipientName:'Sarah Mitchell',address:'875 N Michigan Ave, Chicago, IL 60611',status:'pending'}
+      ]
+    },token);
+  }
 }
 
-// ══════════════════════════════════════════════════════════════
-// INIT
-// ══════════════════════════════════════════════════════════════
+function renderTrackingResult(r,token){
+  document.getElementById('trackingResult').style.display='block';
+  const etaMap={pending:55,assigned:40,in_transit:18,delivered:0};
+  document.getElementById('etaMins').textContent=r.status==='delivered'?'Done':etaMap[r.status]||'—';
+  document.getElementById('deliveryAddress').textContent=`📍 ${r.deliveryAddress||'—'}`;
+  const dName=r.driver?.name||'Awaiting assignment';
+  document.getElementById('trackDriverName').textContent=dName;
+  document.getElementById('driverInitials').textContent=dName.charAt(0).toUpperCase();
+  document.getElementById('trackDriverVehicle').textContent=(r.driver?.vehicleType||'—')+' · '+(r.status==='in_transit'?'EN ROUTE':r.status==='delivered'?'DELIVERED':'WAITING');
+  document.getElementById('trackingCode').textContent=token.toUpperCase();
+
+  document.getElementById('trackingDetails').innerHTML=`
+    <div style="display:grid;gap:8px">
+      <div><strong>Recipient:</strong> ${r.recipientName||'—'}</div>
+      <div><strong>Phone:</strong> ${r.recipientPhone||'—'}</div>
+      <div><strong>Package:</strong> ${r.packageDescription||'—'}</div>
+      <div><strong>Service:</strong> ${r.deliveryType||'Standard'}</div>
+      <div><strong>Price:</strong> ${fmtUSD(r.price)}</div>
+      ${r.signatureRequired?'<div><strong>Note:</strong> Signature required upon delivery</div>':''}
+    </div>`;
+
+  const steps=[
+    {key:'pending',label:'Order Placed',sub:'Your package is registered in our system',icon:'📦'},
+    {key:'assigned',label:'Driver Assigned',sub:`${r.driver?.name||'A driver'} is on their way to pickup`,icon:'🚗'},
+    {key:'in_transit',label:'Out for Delivery',sub:'Your package is on the way',icon:'🚚'},
+    {key:'delivered',label:'Delivered',sub:'Package successfully delivered',icon:'✅'},
+  ];
+  const order=['pending','assigned','in_transit','delivered'];
+  const currentIdx=order.indexOf(r.status);
+  document.getElementById('statusTimeline').innerHTML=steps.map((step,i)=>{
+    const isDone=i<currentIdx;const isActive=i===currentIdx;
+    const cls=isDone?'done':isActive?'active':'pending';
+    const icon=isDone?'✓':step.icon;
+    return`<div class="timeline-item">
+      <div class="timeline-dot ${cls}">${isDone?'✓':isActive?'●':'○'}</div>
+      <div class="timeline-info"><h4>${step.icon} ${step.label}</h4><p>${step.sub}</p></div>
+    </div>`;
+  }).join('');
+
+  // Proof of delivery
+  const podSection=document.getElementById('podSection');
+  if(r.status==='delivered'){
+    podSection.style.display='block';
+    document.getElementById('podDetails').innerHTML=`
+      <div>✓ Delivered on ${fmtDate(r.deliveredAt||new Date())}</div>
+      ${r.signatureRequired?'<div>✓ Signature captured</div>':''}
+      ${r.photoRequired?'<div>✓ Photo proof saved</div>':''}
+      <div style="margin-top:8px;font-size:.78rem">Delivered by ${r.driver?.name||'driver'}</div>`;
+  } else {
+    podSection.style.display='none';
+  }
+
+  setTimeout(()=>{
+    if(mapInstances['trackingMap']){try{mapInstances['trackingMap'].remove()}catch(e){}}
+    const m=initMap('trackingMap',41.8781,-87.6298,13);
+    L.marker([41.8858,-87.6181]).addTo(m).bindPopup('📦 Delivery destination').openPopup();
+    if(r.status==='in_transit'){
+      L.circleMarker([41.8814,-87.6278],{radius:10,fillColor:'#6C63FF',color:'#fff',weight:3,fillOpacity:1}).addTo(m).bindPopup(`🚗 ${r.driver?.name||'Driver'} — En Route`);
+    }
+  },150);
+}
+
+// ══════════ INIT ══════════
 window.addEventListener('DOMContentLoaded',()=>{
   const token=localStorage.getItem('yobu_token');
   const role=localStorage.getItem('yobu_role');
